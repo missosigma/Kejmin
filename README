@@ -1,0 +1,21 @@
+  Yo Kejmin Trainers! This is the Kejmin file where we will be putting all of our work! 
+
+  Things to remember (for everyone >o<);
+  - Put comments!! (You may know, but we don't, and you may forget!);
+  - Communicate on which file you're doing so conflicts are less prone to happen! (They may still happen it might be inevitable.);
+
+
+  Steps to send stuff to terminal // or just take things 
+
+  to access the terminal click the three dots near the top left! 
+
+  git add . 
+  git commit . -m "put your update reasoning here!"
+  git fetch 
+  git rebase 
+  git push 
+
+  tada!! ! 
+
+  if you don't want to send stuff and just want to update; use 
+  git fetch 
