@@ -1,5 +1,5 @@
 # Kejmin
-P*kem*n gotta Kejmin all!
+P#kem#n gotta Kejmin all!
 
 
 Wellllcome to the Kejmin repository! 
