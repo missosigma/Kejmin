@@ -2,12 +2,25 @@ const canvas = document.querySelector('canvas');
 
 const c = canvas.getContext('2d');
 
+console.log(collisions);
+
 canvas.width = 1024;
 canvas.height = 576;
 console.log(canvas);
 
-c.fillStyle = 'white';
-c.fillRect(0, 0, canvas.width, canvas.height);
+const collisionsMap = [];
+for (let i = 0; i < collisions.length; i+= 70) {
+    collisionsMap.push(collisions.slice(i,i+70));
+    
+}
+
+class Boundary {
+    constructor(position) {
+        this.position = position;
+        this.width
+        this.height
+    }
+}
 
 const image = new Image();
 image.src = './K_Images/town.png';
