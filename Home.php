@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+if($_SESSION["loggedIn"]=="YES"){
+
+}else{
+    // echo "You are a scammer.";
+    header("location:index.php");
+    exit;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,0 +1,24 @@
+h1 {
+  font-size:70px;
+  color:rgb(46, 33, 165);
+  padding:10% 10% 20px 10%;
+}
+body {
+  background-color: aquamarine;
+}
+
+h1:hover {
+  color:rgb(56, 162, 255) ;
+  font-size:72px;
+}
+
+h3 {
+  padding:0 10% 0px 20%;
+  color:blue;
+  font-size:25px;
+}
+
+h3:hover {
+  color:mediumblue;
+  font-size:27px;
+}
