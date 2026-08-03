@@ -1,0 +1,10 @@
+.button {
+    display: inline-block;
+  padding: 10px 20px;
+  background-color: #dcb1cd;
+  color: rgb(97, 21, 21);
+  text-decoration: none; 
+  border-radius: 5px;    
+  font-weight: bold;
+  border: 2px solid rgb(60, 14, 14);
+}
