@@ -5,6 +5,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php 
+        include "navbar.htm";
+    ?> 
     <h1> Your Team </h1> 
 <div class="card-container">
   <div class="card">
@@ -112,3 +115,4 @@ h4{
     </style>
 </body>
 </html>
+the users team

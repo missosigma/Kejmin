@@ -18,6 +18,9 @@
   </style>
 </head>
 <body bgcolor = "orange">
+  <?php 
+        include "navbar.htm";
+    ?> 
   <div class = "t_text">
   <text> <div class ="bigger_text">Welcome to Kejmin!</div><br>
     W = Forward <br>
