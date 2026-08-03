@@ -1,4 +1,4 @@
 <?php 
-        include "back_button.php";
+        include "navbar.htm";
     ?> 
 resume game / game overall
