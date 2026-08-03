@@ -24,9 +24,9 @@
     ?> 
   <div class = "t_text">
   <text> <div class ="bigger_text">Welcome to Kejmin!</div><br>
-    W = Forward <br>
+    W = Up <br>
     A = Left <br>
-    S = Backward <br>
+    S = Down <br>
     D = Right <br> <br>
     Click the buttons on your screen to access different menus. <br> <br>
 
