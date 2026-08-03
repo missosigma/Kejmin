@@ -6,7 +6,7 @@
 </head>
 <body>
     <?php 
-        include "navbar.htm";
+        include "back_button.php";
     ?> 
     <h1> Your Team </h1> 
 <div class="card-container">

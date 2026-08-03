@@ -19,7 +19,7 @@
 </head>
 <body bgcolor = "orange">
   <?php 
-        include "navbar.htm";
+        include "back_button.php";
     ?> 
   <div class = "t_text">
   <text> <div class ="bigger_text">Welcome to Kejmin!</div><br>
