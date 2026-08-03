@@ -14,5 +14,5 @@ image.src = './K_Images/town.png';
 console.log(image);
 
 image.onload = () => {
-    c.drawImage(image, 0, 0);
+    c.drawImage(image, -100, -400);
 }
