@@ -8,7 +8,10 @@
 </head>
 <body>
     <h1>Welcome to the Kejmin starting page.</h1>
-    <a href = "navbar.htm"> Navbar (testing current)</a>
+    <h2>(In development.)</h2>
+    <text>Links vvvvv</text></br></br>
+    <a href = "navbar.htm"> Navbar (testing current)</a> </Br></br>
+    <a href = "KejMain.html"> Main Game </a>
     <a></a>
 </body>
 </html>
