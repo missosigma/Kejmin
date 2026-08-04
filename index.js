@@ -27,14 +27,29 @@ collisionsMap.forEach((row, i) => {
         boundaries.push(
             new Boundary({
                 position: {
-                    x: j * Boundary.width,
-                    y: i * Boundary.height
+                    x: j * Boundary.width + offset.x,
+                    y: i * Boundary.height + offset.y
                 }
         }));
     })
 })
 
 const battleZones = [];
+
+battleZonesMap.forEach((row, i) => {
+    row.forEach((symbol, j) => {
+        if (symbol === 554)
+        battleZones.push(
+            new Boundary({
+                position: {
+                    x: j * Boundary.width + offset.x,
+                    y: i * Boundary.height + offset.y
+                }
+        }));
+    })
+})
+
+console.log(battleZones);
 
 const image = new Image();
 image.src = './K_Images/town.png';
@@ -65,12 +80,15 @@ image.onload = () => {
 //     );
 // }
 
-// function animate() {
-//     window.requestAnimationFrame(animate);
-//     background.draw();
-//     boundaries.forEach((boundary) => {
-//         boundary.draw();
-//     })
-//     player.draw();
-//     foreground.draw();
-// }
+function animate() {
+    window.requestAnimationFrame(animate);
+    background.draw();
+    boundaries.forEach((boundary) => {
+        boundary.draw();
+    })
+    battleZones.forEach((battleZone) => {
+        battleZone.draw();
+    })
+    player.draw();
+    foreground.draw();
+}
