@@ -71,13 +71,13 @@ li a{
 <header>
     <nav class = "navbar">
         <ul> 
+            <li><a href ="#">Hello, <?php echo $_SESSION["userName"];?>!</a></li>
+            <li><a href = "Home.php"> Home </a></li>
+            <li><a href = "kejmain.php"> Resume </a></li>
             <li><a href = "yourteam.php">Your Team </a></li>
             <li><a href = "kejmins.php">Kejmin Dex</a></li>
             <li><a href = "map.php"> Map </a></li>
-            <li><a href = "kejmain.php"> Resume </a></li>
-            <li><a href = "Home.php"> Home </a></li>
             <li><a href = "tutorial.php"> Tutorial </a></li>
-            <li><a href ="#">Hello, <?php echo $_SESSION["userName"];?>!</a></li>
             <li><a href = "processes/logout.php"> Logout </a></li>
         </ul>
     </nav>  
