@@ -18,7 +18,7 @@ if($_SESSION["loggedIn"]=="YES"){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kejmin Welcome Page</title>
-  <link rel= "icon" type = "image/x-icon" href = "K_Images/Leaf Slug.png">
+  <link rel= "icon" type = "image/x-icon" href = "K_Images/Sleaf.png">
   <!-- Icon ^^ -->
   <link rel="stylesheet" href="kejmin.css">
   <!-- Links css^^ -->
