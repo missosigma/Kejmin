@@ -13,21 +13,6 @@ for (let i = 0; i < collisions.length; i+= 60) {
 
 console.log(collisionsMap);
 
-class Boundary {
-    static width = 48;
-    static height = 48;
-    constructor(position) {
-        this.position = position;
-        this.width = 48;
-        this.height = 48;
-    }
-
-    draw() {
-        c.fillStyle = 'red';
-        c.fillRect(this.position.x, this.position.y, this.width, this.height);
-    }
-}
-
 const boundaries = [];
 
 collisionsMap.forEach((row, i) => {
@@ -48,6 +33,27 @@ console.log(boundaries);
 const image = new Image();
 image.src = './K_Images/town.png';
 
+const foreground = new Image();
+foregroundImage.src = './K_Images/foregroundObjectsTown.png';
+
 image.onload = () => {
     c.drawImage(image, -100, -400);
+}
+
+const foreground = new Sprite({
+    position: {
+        x: offset.x,
+        y: offset.y
+    },
+    image: foregroundImage
+})
+
+function animate() {
+    window.requestAnimationFrame(animate);
+    background.draw();
+    boundaries.forEach((boundary) => {
+        boundary.draw();
+    })
+    player.draw();
+    foreground.draw();
 }
