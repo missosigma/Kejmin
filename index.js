@@ -33,38 +33,38 @@ console.log(boundaries);
 const image = new Image();
 image.src = './K_Images/town.png';
 
-const foreground = new Image();
-foregroundImage.src = './K_Images/foregroundObjectsTown.png';
+// const foreground = new Image();
+// foregroundImage.src = './K_Images/foregroundObjectsTown.png';
 
 image.onload = () => {
     c.drawImage(image, -100, -400);
 }
 
-const foreground = new Sprite({
-    position: {
-        x: offset.x,
-        y: offset.y
-    },
-    image: foregroundImage
-})
+// const foreground = new Sprite({
+//     position: {
+//         x: offset.x,
+//         y: offset.y
+//     },
+//     image: foregroundImage
+// })
 
-const movables = [background, ...boundaries, foreground];
+// const movables = [background, ...boundaries, foreground];
 
-function rectangularCollision({ rectangle1, rectangle2 }) {
-    return (
-        rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
-        rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
-        rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
-        rectangle1.position.y + rectangle1.height >= rectangle2.position.y
-    );
-}
+// function rectangularCollision({ rectangle1, rectangle2 }) {
+//     return (
+//         rectangle1.position.x + rectangle1.width >= rectangle2.position.x &&
+//         rectangle1.position.x <= rectangle2.position.x + rectangle2.width &&
+//         rectangle1.position.y <= rectangle2.position.y + rectangle2.height &&
+//         rectangle1.position.y + rectangle1.height >= rectangle2.position.y
+//     );
+// }
 
-function animate() {
-    window.requestAnimationFrame(animate);
-    background.draw();
-    boundaries.forEach((boundary) => {
-        boundary.draw();
-    })
-    player.draw();
-    foreground.draw();
-}
+// function animate() {
+//     window.requestAnimationFrame(animate);
+//     background.draw();
+//     boundaries.forEach((boundary) => {
+//         boundary.draw();
+//     })
+//     player.draw();
+//     foreground.draw();
+// }
