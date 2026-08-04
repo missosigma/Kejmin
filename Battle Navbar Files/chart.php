@@ -1,3 +1,7 @@
+<?php
+include "../back_button.php";
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,7 +13,7 @@
 </div>
 <body>
   <div class="image-container">
-    <img src="K_Images/ElementChart.png" alt="Centered Image">
+    <img src="../K_Images/ElementChart.png" alt="Centered Image">
   </div>  
 </body>
 <style>

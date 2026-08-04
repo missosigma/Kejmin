@@ -51,10 +51,11 @@ li a{
 <footer>
     <nav class = "bottom-right-nav">
     <ul>
-        <li><a href="run.php">Run</a></li>
-        <li><a href="capture.php">Capture</a></li>
-        <li><a href="chart.htm">Element Chart</a></li>
-        <li><a href="attack.php">Attack</a></li>
+        <li><a onclick="history.back()">Run</a></li>
+        <!-- Not just back to main page// back to where they went // lol -->
+        <li><a href="Battle Navbar Files/capture.php">Capture</a></li>
+        <li><a href="Battle Navbar Files/chart.php">Element Chart</a></li>
+        <li><a href="Battle Navbar Files/attack.php">Attack</a></li>
     </ul>
    </nav>
 </footer>

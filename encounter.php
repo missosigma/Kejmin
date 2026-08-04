@@ -10,7 +10,7 @@
 
 <body>
     <?php
-        include "battlenavbar.htm";
+        include "battlenavbar.php";
     ?>
     <canvas width = 800px height = 600px style = "background: white"></canvas>
     <script src="encounter.js"></script>
