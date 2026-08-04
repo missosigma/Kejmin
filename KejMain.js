@@ -1,7 +1,9 @@
 
 const context = canvas.getContext(`2d`);
+
 const walkSprites = new Image(); walkSprites.src = 'K_Images/248259.png';
 const background = new Image(); background.src = 'K_Images/bg.jpg';
+
 const tree = new Image(); tree.src = 'K_Images/tree.png';
 const enemy1 = new Image(); enemy1.src = 'K_Images/enemy1_left.png';
 const walkSpriteWidth = 333.5;
@@ -21,12 +23,19 @@ let spritey = canvas.height/2-spriteSize/2/16*25;
 let direction;
 let spritesy = 0;
 
-function clear() {
-    context.fillStyle = "rgb(255, 255, 255)";
-    context.fillRect(0,0,canvas.width,canvas.height);
-}
+// function clear() {
+//     // context.fillStyle = "rgb(255, 255, 255)";
+//     // context.fillRect(0,0,canvas.width,canvas.height);
+    
+// }
 
 function drawWorld() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (image.complete) {
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    }
+
     // if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
     //     console.log("left of the tree");
     //     spritesy = 1997*3/4;
@@ -101,7 +110,7 @@ function drawWorld() {
 } 
 
 function gameCheck() {
-  clear();
+//   clear();
   drawWorld();
 }
 
