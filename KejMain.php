@@ -1,5 +1,16 @@
 <html lang="en">
-    <?php session_start();?>
+<?php
+        include "navbar.php";
+ 
+if($_SESSION["loggedIn"]=="YES"){
+
+}else{
+    // echo "You are a scammer.";
+    header("location:index.php");
+    exit;
+}
+
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +20,7 @@
 </head>
 
 <body>
-    <?php
-        include "navbar.htm";
-    ?>
+
     <canvas width = 800px height = 600px style = "background: white"></canvas>
     <script src="KejMain.js"></script>
 </body>

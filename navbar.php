@@ -1,4 +1,16 @@
 <link rel= "icon" type = "image/x-icon" href = "K_Images/KJMN.png">
+<?php 
+session_start();
+
+if($_SESSION["loggedIn"]=="YES"){
+
+}else{
+    // echo "You are a scammer.";
+    header("location:index.php");
+    exit;
+}
+
+?>
 <style>
     header{
         display: flex;
@@ -66,6 +78,7 @@ li a{
             <li><a href = "Home.php"> Home </a></li>
             <li><a href = "tutorial.php"> Tutorial </a></li>
             <li><a href ="#">Hello, <?php echo $_SESSION["userName"];?>!</a></li>
+            <li><a href = "processes/logout.php"> Logout </a></li>
         </ul>
     </nav>  
 </header>

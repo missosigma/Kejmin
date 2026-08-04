@@ -1,5 +1,7 @@
-<?php 
-session_start();
+<?php
+        include "navbar.php";
+ 
+
 
 if($_SESSION["loggedIn"]=="YES"){
 
@@ -24,14 +26,12 @@ if($_SESSION["loggedIn"]=="YES"){
   <!-- Links css^^ -->
 </head>
 <body>
-  <?php 
-        include "navbar.htm";
-    ?> 
+  
     <!-- ^^ add to any page to include the navbar!!  -->
     <h1>Welcome to the Kejmin starting page.</h1>
     <h2>(In development.)</h2>
     <text>Links vvvvv</text></br></br>
-    <a class = "button" href = "navbar.htm"> Navbar (testing current)</a> </Br></br>
+    <a class = "button" href = "navbar.php"> Navbar (testing current)</a> </Br></br>
     <a class = "button" href = "KejMain.php"> Testing Game </a> </Br></br>
     <a></a>
 </body>

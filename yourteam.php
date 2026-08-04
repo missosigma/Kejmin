@@ -8,6 +8,18 @@
 <body>
     <?php 
         include "back_button.php";
+        
+    session_start();
+
+    if($_SESSION["loggedIn"]=="YES"){
+
+    }else{
+        // echo "You are a scammer.";
+        header("location:index.php");
+        exit;
+    }
+
+
     ?> 
     <h1> Your Team </h1> 
 <div class="card-container">
