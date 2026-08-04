@@ -1,7 +1,7 @@
 
 const context = canvas.getContext(`2d`);
 
-const walkSprites = new Image(); walkSprites.src = 'K_Images/248259.png';
+const walkSprites = new Image(); walkSprites.src = 'K_Images/testsprite.png';
 const background = new Image(); background.src = 'K_Images/bg.jpg';
 
 const tree = new Image(); tree.src = 'K_Images/tree.png';
