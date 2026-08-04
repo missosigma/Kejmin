@@ -13,8 +13,8 @@ let j = 0;
 let walking = false;
 let townx = 0;
 let towny = -200;
-let treex = 100;
-let treey = 100;
+let treex = 252;
+let treey = 320;
 let enemy1x = 767;
 let enemy1y = 444;
 let spriteSize = 32;
@@ -31,17 +31,17 @@ function drawWorld() {
     //     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     // }
 
-    if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
+    if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 - 2 && treey <= spritey + spriteSize + 2) {
         console.log("left of the tree");
         walking = false;
         spritesy = 1997*3/4;
     }
-    if(direction == "right" && enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y+102 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2) {
+    if(direction == "right" && enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y + spriteSize/16*25 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2) {
         console.log("left of the enemy1");
         walking = false;
         spritesy = 1997*3/4;
     }
-    if(direction == "left" && treex + 64 >= spritex && treex + 64 <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
+    if(direction == "left" && treex + 64 >= spritex && treex + 64 <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 - 2 && treey <= spritey + spriteSize + 4) {
         console.log("right of the tree");
         walking = false;
         spritesy = 1997*2/4;
@@ -61,7 +61,7 @@ function drawWorld() {
         walking = false;
         spritesy = 1997/4;
     }
-    if(direction == "down" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 >= spritey + spriteSize/16*25/2 && treey + spriteSize/4 <= spritey + spriteSize/16*25) {
+    if(direction == "down" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 >= spritey + spriteSize/16*25/2 && treey + spriteSize/4 - 2 <= spritey + spriteSize/16*25) {
         console.log("above the tree");
         walking = false;
         spritesy = 0;
