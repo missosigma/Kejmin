@@ -27,45 +27,45 @@ function clear() {
 }
 
 function drawWorld() {
-    if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
-        console.log("left of the tree");
-        spritesy = 1997*3/4;
-    }
-    if(direction == "left" && treex + 64 >= spritex && treex + 64 <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
-        console.log("right of the tree");
-        walking = false;
-        spritesy = 1997*2/4;
-    }
-    if(direction == "left" && (enemy1x + spriteSize >= spritex && enemy1x + spriteSize <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize + 2)) {
-        console.log("right of the enemy1");
-        walking = false;
-        spritesy = 1997*2/4;
-    }
-    if(direction == "up" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 - spriteSize/2 >= spritey && treey <= spritey) {
-        console.log("below the tree");
-        walking = false;
-        spritesy = 1997/4;
-    }
-    if(direction == "up" && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25 - spriteSize/2 >= spritey && enemy1y <= spritey) {
-        console.log("below the enemy1", spritey, enemy1y);
-        walking = false;
-        spritesy = 1997/4;
-    }
-    if(direction == "down" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 >= spritey + spriteSize/16*25/2 && treey + spriteSize/4 <= spritey + spriteSize/16*25) {
-        console.log("above the tree");
-        walking = false;
-        spritesy = 0;
-    }
-    if(direction == "down" && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize/16*25 + 2) {
-        console.log("above the enemy1");
-        walking = false;
-        spritesy = 0;
-    }
+    // if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
+    //     console.log("left of the tree");
+    //     spritesy = 1997*3/4;
+    // }
+    // if(direction == "left" && treex + 64 >= spritex && treex + 64 <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
+    //     console.log("right of the tree");
+    //     walking = false;
+    //     spritesy = 1997*2/4;
+    // }
+    // if(direction == "left" && (enemy1x + spriteSize >= spritex && enemy1x + spriteSize <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize + 2)) {
+    //     console.log("right of the enemy1");
+    //     walking = false;
+    //     spritesy = 1997*2/4;
+    // }
+    // if(direction == "up" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 - spriteSize/2 >= spritey && treey <= spritey) {
+    //     console.log("below the tree");
+    //     walking = false;
+    //     spritesy = 1997/4;
+    // }
+    // if(direction == "up" && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25 - spriteSize/2 >= spritey && enemy1y <= spritey) {
+    //     console.log("below the enemy1", spritey, enemy1y);
+    //     walking = false;
+    //     spritesy = 1997/4;
+    // }
+    // if(direction == "down" && treex + 64 >= spritex + spriteSize/4 && treex + spriteSize/4 <= spritex + spriteSize && treey + 102 >= spritey + spriteSize/16*25/2 && treey + spriteSize/4 <= spritey + spriteSize/16*25) {
+    //     console.log("above the tree");
+    //     walking = false;
+    //     spritesy = 0;
+    // }
+    // if(direction == "down" && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize/16*25 + 2) {
+    //     console.log("above the enemy1");
+    //     walking = false;
+    //     spritesy = 0;
+    // }
     
-    if(enemy1x >= 0 && enemy1x + spriteSize <= canvas.width && enemy1x >= spritex + spriteSize && spritey + spriteSize/3 >= enemy1y && spritey + spriteSize - 2 <= enemy1y + spriteSize/16*25) {
-      console.log("encounter");
-      window.location = `encounter.php?enemyid=1`;
-    }
+    // if(enemy1x >= 0 && enemy1x + spriteSize <= canvas.width && enemy1x >= spritex + spriteSize && spritey + spriteSize/3 >= enemy1y && spritey + spriteSize - 2 <= enemy1y + spriteSize/16*25 && ) {
+    //   console.log("encounter");
+    //   window.location = `encounter.php?enemyid=1`;
+    // }
     
 
     if(walking) {
@@ -87,14 +87,14 @@ function drawWorld() {
                 spritesy = 1997*3/4;
                 break;
         }
-        context.drawImage(tree, treex, treey);
+        // context.drawImage(tree, treex, treey);
         context.drawImage(enemy1, 34 * j, 0, 34, 54, enemy1x, enemy1y, spriteSize, spriteSize/16*25);
         context.drawImage(walkSprites, walkSpriteWidth * i, spritesy, walkSpriteWidth, walkSpriteHeight, spritex, spritey, spriteSize, spriteSize/16*25);
         console.log("walking", i);
         i++
         if(i >= 4) { i = 0; walking = false; }
     } else { 
-        context.drawImage(tree, treex, treey);
+        // context.drawImage(tree, treex, treey);
         context.drawImage(enemy1, 34 * j, 0, 34, 54, enemy1x, enemy1y, spriteSize, spriteSize/16*25);
         context.drawImage(walkSprites, walkSpriteWidth * i, spritesy, walkSpriteWidth, walkSpriteHeight, spritex, spritey, spriteSize, spriteSize/16*25);
     }
