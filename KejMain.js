@@ -33,10 +33,12 @@ function drawWorld() {
 
     if(direction == "right" && treex >= spritex && treex <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
         console.log("left of the tree");
+        walking = false;
         spritesy = 1997*3/4;
     }
     if(direction == "right" && enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y+102 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2) {
         console.log("left of the enemy1");
+        walking = false;
         spritesy = 1997*3/4;
     }
     if(direction == "left" && treex + 64 >= spritex && treex + 64 <= spritex + spriteSize && treey+102 >= spritey + spriteSize/16*25/2 && treey <= spritey + spriteSize + 2) {
