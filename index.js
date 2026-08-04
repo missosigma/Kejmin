@@ -69,7 +69,7 @@ image.onload = () => {
 //     image: foregroundImage
 // })
 
-// const movables = [background, ...boundaries, foreground];
+// const movables = [background, ...boundaries, foreground, ...battleZones];
 
 // function rectangularCollision({ rectangle1, rectangle2 }) {
 //     return (
