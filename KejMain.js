@@ -64,7 +64,7 @@ function drawWorld() {
     
     if(enemy1x >= 0 && enemy1x + spriteSize <= canvas.width && enemy1x >= spritex + spriteSize && spritey + spriteSize/3 >= enemy1y && spritey + spriteSize - 2 <= enemy1y + spriteSize/16*25) {
       console.log("encounter");
-      
+      window.location = `encounter.php?enemyid=1`;
     }
     
 
