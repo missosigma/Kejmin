@@ -117,7 +117,7 @@ function gameCheck() {
   drawWorld();
 }
 
-window.setInterval(gameCheck,1000/16);
+window.setInterval(gameCheck,1000/20);
 
 document.addEventListener('keydown', (event) => {
   if (event.key === 's') {
