@@ -46,30 +46,6 @@
     <h3>Kejmin</h3>
     <h4> Health: </h4>
   </div>
-
-  <div class="card">
-    <div class="img-wrapper">
-      <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
-    </div>
-    <h3>Kejmin</h3>
-    <h4> Health: </h4>
-  </div>
-
-  <div class="card">
-    <div class="img-wrapper">
-      <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
-    </div>
-    <h3>Kejmin</h3>
-    <h4> Health: </h4>
-  </div>
-
-  <div class="card">
-    <div class="img-wrapper">
-      <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
-    </div>
-    <h3>Kejmin</h3>
-    <h4> Health: </h4>
-  </div>
 </div>
 <style>
 *, *::before, *::after {
