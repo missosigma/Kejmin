@@ -20,6 +20,9 @@ if($_SESSION["loggedIn"]=="YES"){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kejmin Welcome Page</title>
+  <script src = "audio.js" defer></script>
+  <audio id="bg-music" src = "background.mp3" loop></audio> 
+  <!-- bg music ^^^ -->
   <link rel= "icon" type = "image/x-icon" href = "K_Images/Sleaf.png">
   <!-- Icon ^^ -->
   <link rel="stylesheet" href="kejmin.css">
@@ -30,9 +33,11 @@ if($_SESSION["loggedIn"]=="YES"){
     <!-- ^^ add to any page to include the navbar!!  -->
     <h1>Welcome to the Kejmin starting page.</h1>
     <h2>(In development.)</h2>
+    <h2>Turn your volume down we have noise!!</h2>
     <text>Links vvvvv</text></br></br>
     <a class = "button" href = "navbar.php"> Navbar (testing current)</a> </Br></br>
     <a class = "button" href = "KejMain.php"> Testing Game </a> </Br></br>
     <a></a>
+    
 </body>
 </html>

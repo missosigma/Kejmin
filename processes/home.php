@@ -19,11 +19,12 @@ session_start();
   <header>
     <h1>Welcome to the Home page!</h1><br>
     <h3>Click on the navigation bar texts to explore this webpage!</h3>
+    <h2>Turn your volume down we have noise XDD!!</h2>
   </header>
 
   <main></main>
 
   <footer></footer>
-
+ 
 </body>
 </html>

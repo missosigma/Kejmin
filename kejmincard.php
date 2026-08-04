@@ -1,3 +1,32 @@
+<?php
+require_once("processes/dbconfig.php");
+
+$id = $_GET["id"];
+  $conn = new mysqli($servername, $username, $password, $database);
+  if($conn->connect_error) {
+    die("Connection Failed: " . $conn->connect_error);}
+  //send sql statement 
+  $sql ="SELECT * FROM Kejmin where kejmin_id={$id};";
+  $stmt = $conn->prepare($sql);
+  $stmt-> execute();
+  $result = $stmt->get_result();
+echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
+
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+     for($i=0;$i<count($rows);$i++){
+      $name = $rows[$i]["kejmin_name"];
+      $id = $rows[$i]["kejmin_id"];
+      $desc = $rows[$i]["kejdesc"];
+      echo $name;
+      echo "</a>";
+      echo "<br><br>";
+      
+    }
+  echo "<br>";
+echo "</div>";
+$conn->close();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +39,11 @@
     <div class = "card">
  <!-- Place Holder Image -->
 <img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HW0RumWV_GF03zyeXK2NI_uLoWlAcM4HjorEeO0w89ZgCMqZTp3S2Zzv3GngtzYuy6dh0ZzLxA0hbhxXloJ9Ezrf2oTBykmQ0iJZEoo&s=10">
-<h3> Kejmin </h3>
+<h3> <?php echo $name; ?> </h3>
 <hr> 
 <h4> Description </h4> 
 <br> 
-<p> TBD </p>
+<p> <?php echo $desc; ?> </p>
 </div>
 </div>
     <style>

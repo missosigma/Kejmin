@@ -3,16 +3,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel= "icon" type = "image/x-icon" href = "K_Images/KJMN.png">
+<?php 
+        include "back_button.php";
+        
+    session_start();
+
+    if($_SESSION["loggedIn"]=="YES"){
+
+    }else{
+        // echo "You are a scammer.";
+        header("location:index.php");
+        exit;
+    }
+
+
+    ?> 
 </head>
 <body>
     <div class = "buttoncontainer">
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=6">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=7">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=8">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=9">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=10">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=11">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=12">Kejmin</a><br>
 </div>
 </body>
 </html>   
