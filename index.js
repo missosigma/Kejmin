@@ -1,6 +1,6 @@
 const canvas = document.querySelector('canvas');
-
 const c = canvas.getContext('2d');
+console.log(battleZonesData);
 
 canvas.width = 1024;
 canvas.height = 576;
@@ -8,12 +8,18 @@ canvas.height = 576;
 const collisionsMap = [];
 for (let i = 0; i < collisions.length; i+= 60) {
     collisionsMap.push(collisions.slice(i, 60 + i));
-    
 }
 
-console.log(collisionsMap);
+const battleZonesMap = [];
+for (let i = 0; i < battleZonesData.length; i+= 60) {
+    battleZonesMap.push(battleZonesData.slice(i, 60 + i));
+}
 
 const boundaries = [];
+const offset = {
+    x: -735,
+    y: -650
+}
 
 collisionsMap.forEach((row, i) => {
     row.forEach((symbol, j) => {
@@ -28,7 +34,7 @@ collisionsMap.forEach((row, i) => {
     })
 })
 
-console.log(boundaries);
+const battleZones = [];
 
 const image = new Image();
 image.src = './K_Images/town.png';
