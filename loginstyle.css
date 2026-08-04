@@ -1,0 +1,63 @@
+body {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image:url(https://img.magnific.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902621.jpg?semt=ais_test_b&w=740&q=80);
+    background-repeat:no-repeat;
+     background-size: cover;
+        background-position: center center;
+        background-attachment:fixed;
+    
+}
+
+form {
+    background-color: white;
+    border: 3px solid #B9A5E2;
+    padding: 12px;
+    margin:auto;
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px #B9A5E2;
+    border-style: solid;
+    box-sizing: border-box;
+}
+input:hover[type="text"], input:hover[type="password"]{
+    background-color:#a898ce;
+}
+/* Set a style for all buttons */
+button {
+    background-color: #B9A5E2;
+    color: black;
+    font-family: Impact;
+    -webkit-text-stroke: 0.5px white;
+    font-size: 16px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+/* Add a hover effect for buttons */
+button:hover {
+    opacity: 0.8;
+}
+/* Add padding to containers */
+.container {
+    width: 300px;
+    padding: 16px;
+    margin:auto;
+}
+label{
+    -webkit-text-stroke: 0.5px #B9A5E2;
+}
+h1{
+    text-align:center;
+    -webkit-text-stroke: 0.5px #B9A5E2;
+} 
+.register{
+    color:black;
+    -webkit-text-stroke: 0.5px #B9A5E2;
+}

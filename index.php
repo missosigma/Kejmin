@@ -18,6 +18,7 @@ $message = $_GET["message"]."<br>";
   </style> 
 </head>
   <body>
+    <h1> Welcome to Kejmin! </h1>
     <div class = "container">
     <form method = "post" name = "login" id = "login" action = "processes/login.php">
         <font color = "red">
