@@ -8,6 +8,26 @@ const tree = new Image(); tree.src = 'K_Images/tree.png';
 const enemy1 = new Image(); enemy1.src = 'K_Images/enemy1_left.png';
 const npc1 = new Image(); npc1.src = 'K_Images/oldman.png';
 const townmusic = new Audio('K_Audio/town4.mp3'); townmusic.loop = true;
+let townMusicStarted = false;
+
+function playTownMusic() {
+  if (!townmusic.paused) return;
+  townmusic.play()
+    .then(() => { townMusicStarted = true; })
+    .catch(error => console.log('townmusic play blocked', error));
+}
+
+window.addEventListener('pageshow', (event) => {
+  if ((event.persisted || document.visibilityState === 'visible') && townMusicStarted) {
+    playTownMusic();
+  }
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && townMusicStarted) {
+    playTownMusic();
+  }
+});
 
 const walkSpriteWidth = 333.5;
 const walkSpriteHeight = 522;
@@ -186,8 +206,11 @@ playButton.onload = function() { context.drawImage(playButton, canvas.width/2-64
 window.addEventListener('click', (event) => {
     if(!gameStart) {
       window.setInterval(gameCheck,1000/20);
-      townmusic.play().catch(error => console.log("blocked suckka",error));
+      playTownMusic();
       gameStart = true;
+    }
+    if (townMusicStarted && townmusic.paused) {
+      playTownMusic();
     }
 });
 

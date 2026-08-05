@@ -55,7 +55,6 @@ li a{
     <ul>
         <li><a onclick="history.back()">Run</a></li>
         <!-- Not just back to main page// back to where they went // lol -->
-        <li><a href="Battle Navbar Files/capture.php">Capture</a></li>
         <li><a href="Battle Navbar Files/chart.php">Element Chart</a></li>
         <li class="attack"><a href="Battle Navbar Files/attack.php">Attack</a></li>
     </ul>
