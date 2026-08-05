@@ -18,6 +18,7 @@ echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
       $name = $rows[$i]["kejmin_name"];
       $id = $rows[$i]["kejmin_id"];
       $desc = $rows[$i]["kejdesc"];
+      $image = $name.".png";
     }
   echo "<br>";
 echo "</div>";
@@ -35,7 +36,12 @@ $conn->close();
     <div class = "gallery">
     <div class = "card">
  <!-- Place Holder Image -->
-<img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8HW0RumWV_GF03zyeXK2NI_uLoWlAcM4HjorEeO0w89ZgCMqZTp3S2Zzv3GngtzYuy6dh0ZzLxA0hbhxXloJ9Ezrf2oTBykmQ0iJZEoo&s=10">
+<img src= "K_Images/Card_Bg.jpg">
+ <?php
+    if(is_file("K_Images/{$image}")){
+    echo "<img src='K_Images/{$image}'> ";
+                }
+            ?>
 <h3> <?php echo $name; ?> </h3>
 <hr> 
 <h4> Description </h4> 

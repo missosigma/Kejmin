@@ -27,8 +27,8 @@
     <a class = "button" href = "kejmincard.php?id=8">Sweeterie</a><br>
     <a class = "button" href = "kejmincard.php?id=9">Fanzo</a><br>
     <a class = "button" href = "kejmincard.php?id=10">Getzy</a><br>
-    <a class = "button" href = "kejmincard.php?id=11">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php?id=12">Kejmin</a><br>
+    <!-- <a class = "button" href = "kejmincard.php?id=11">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=12">Kejmin</a><br> -->
 </div>
 </body>
 </html>   
