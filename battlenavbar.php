@@ -45,7 +45,9 @@ li a{
    li a:hover{
             background-color: #a898ce;
         }
-
+.hidden {
+  display: none !important;
+}
 
 </style>
 <footer>
@@ -55,7 +57,8 @@ li a{
         <!-- Not just back to main page// back to where they went // lol -->
         <li><a href="Battle Navbar Files/capture.php">Capture</a></li>
         <li><a href="Battle Navbar Files/chart.php">Element Chart</a></li>
-        <li><a href="Battle Navbar Files/attack.php">Attack</a></li>
+        <li class="attack"><a href="Battle Navbar Files/attack.php">Attack</a></li>
     </ul>
    </nav>
 </footer>
+<script src="Battle Navbar Files/attackbar.js"></script>

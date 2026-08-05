@@ -6,51 +6,63 @@ and the opponent's health lowers.
 
 - (xtra - any effects)
 <?php include "../battlenavbar.php" ?>
+<!DOCTYPE html>
 <html>
-    <div class ="bar">
-<nav class = "bottom-right-nava">
-<ul>
-<li> Move 1: </li>
-<li> Move 2: </li>
-<li> Move 3: </li>
-</ul>
-</nav>
-</div>
-</html>
-<style>
- 
-    .bottom-right-nava{
-    position:fixed;
-    bottom:100px;
-    right:100px;
-    z-index:1000;
-    border: 1px solid black;
-    background-color: black;
-    padding: 2px;
-  
-} 
-
-ul{
-      list-style-type:none;
-            margin:0;
-            padding:0;
-            overflow:hidden;
-            background-color:#B9A5E2;
-            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;                
+<head>
+  <style>
+    .bottom-right-nava {
+      position: fixed;
+      bottom: 100px;
+      right: 100px;
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      gap: 10px;
+      border: 2px solid black;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #B9A5E2;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    .bottom-right-nava button {
+      white-space: nowrap !important;
+      width: auto !important;
+      margin: 0 !important;
+    }
+    button {
+      background-color: #B9A5E2;
+      color: white;
+      font-family: Impact;
+      -webkit-text-stroke: 0.5px black;
+      font-size: 16px;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    .bottom-right-nava button:hover {
+      background-color: #a898ce;
+    }
+    .hidden {
+  display: none !important;
 }
-
-.bottom-right-nava li{
-    display:block;
-            color:white;
-            padding:14px 26px;
-            text-decoration:none;
-            font-size:20px;
-            margin-top:13px;
-            -webkit-text-stroke:1px black;
-            
-}
-
-  .bottom-right-nava li:hover{
-            background-color: #a898ce;
-        }
   </style>
+</head>
+<body>
+
+ 
+  <nav id="movebar" class="bottom-right-nava">
+    <ul>
+      <li><button class="move" data-id="1"> Move 3: </button></li>
+      <li><button class="move" data-id="2"> Move 2: </button></li>
+      <li><button class="move" data-id="3"> Move 1: </button></li>
+    </ul>
+  </nav>
+  <script src="attackbar.js"></script>
+</body>
+</html>
