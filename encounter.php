@@ -6,7 +6,7 @@
     <title>Kejmin</title>
     <link rel= "icon" type = "image/x-icon" href = "K_Images/KJMN.png">
     <script src = "audio.js" defer></script>
-  <audio id="battle-music" src = "battle.mp3" loop></audio> 
+  <audio id="battle-music" src = "K_Audio/battle.mp3" loop></audio> 
 
 </head>
 
