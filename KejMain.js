@@ -1,4 +1,4 @@
-const canvas = document.querySelector('canvas');
+
 const context = canvas.getContext(`2d`);
 
 const walkSprites = new Image(); walkSprites.src = 'K_Images/testsprite.png';
