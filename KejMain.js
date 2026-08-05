@@ -1,12 +1,15 @@
 
 const context = canvas.getContext(`2d`);
 
+const play = document.getElementById('start-btn');
+const playButton = new Image(); playButton.src = 'K_Images/play.png';
 const walkSprites = new Image(); walkSprites.src = 'K_Images/testsprite.png';
 const town = new Image(); town.src = 'K_Images/town.png';
-
 const tree = new Image(); tree.src = 'K_Images/tree.png';
 const enemy1 = new Image(); enemy1.src = 'K_Images/enemy1_left.png';
 const npc1 = new Image(); npc1.src = 'K_Images/oldman.png';
+const townmusic = new Audio('K_Audio/town4.mp3'); townmusic.loop = true;
+
 const walkSpriteWidth = 333.5;
 const walkSpriteHeight = 522;
 let i = 0;
@@ -27,6 +30,7 @@ let spritey = 100;
 let direction;
 let spritesy = 0;
 let encountered = 0;
+let gameStart = false;
 
 function drawWorld() {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -147,25 +151,34 @@ function gameCheck() {
   drawWorld();
 }
 
-window.setInterval(gameCheck,1000/24);
+playButton.onload = function() { context.drawImage(playButton, canvas.width/2-64,canvas.height/2-64, 128, 128); };
+window.addEventListener('click', (event) => {
+    if(!gameStart) {
+      window.setInterval(gameCheck,1000/20);
+      townmusic.play().catch(error => console.log("blocked suckka",error));
+      gameStart = true;
+    }
+});
+
+
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'z' && npc1Interactable) {
-    alert('hi!');
+  if ((event.key === 'z' || event.key === 'Enter') && npc1Interactable) {
+    alert('The power of technology is amazing!');
   }
-  if (event.key === 's') {
+  if (event.key === 's' || event.key === 'ArrowDown') {
     walking = true;
     direction = "down";
   }
-  else if (event.key === 'w') {
+  else if (event.key === 'w' || event.key === 'ArrowUp') {
     walking = true;
     direction = "up";
   }
-  else if (event.key === 'a') {
+  else if (event.key === 'a' || event.key === 'ArrowLeft') {
     walking = true;
     direction = "left";
   }
-  else if (event.key === 'd') {
+  else if (event.key === 'd' || event.key === 'ArrowRight') {
     walking = true;
     direction = "right";
   }
