@@ -1,55 +1,55 @@
 const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
-console.log(battleZonesData);
+// console.log(battleZonesData);
 
-canvas.width = 1024;
-canvas.height = 576;
+// canvas.width = 1024;
+// canvas.height = 576;
 
-const collisionsMap = [];
-for (let i = 0; i < collisions.length; i+= 60) {
-    collisionsMap.push(collisions.slice(i, 60 + i));
-}
+// const collisionsMap = [];
+// for (let i = 0; i < collisions.length; i+= 60) {
+//     collisionsMap.push(collisions.slice(i, 60 + i));
+// }
 
-const battleZonesMap = [];
-for (let i = 0; i < battleZonesData.length; i+= 60) {
-    battleZonesMap.push(battleZonesData.slice(i, 60 + i));
-}
+// const battleZonesMap = [];
+// for (let i = 0; i < battleZonesData.length; i+= 60) {
+//     battleZonesMap.push(battleZonesData.slice(i, 60 + i));
+// }
 
-const boundaries = [];
-const offset = {
-    x: -735,
-    y: -650
-}
+// const boundaries = [];
+// const offset = {
+//     x: -735,
+//     y: -650
+// }
 
-collisionsMap.forEach((row, i) => {
-    row.forEach((symbol, j) => {
-        if (symbol === 554)
-        boundaries.push(
-            new Boundary({
-                position: {
-                    x: j * Boundary.width + offset.x,
-                    y: i * Boundary.height + offset.y
-                }
-        }));
-    })
-})
+// collisionsMap.forEach((row, i) => {
+//     row.forEach((symbol, j) => {
+//         if (symbol === 554)
+//         boundaries.push(
+//             new Boundary({
+//                 position: {
+//                     x: j * Boundary.width + offset.x,
+//                     y: i * Boundary.height + offset.y
+//                 }
+//         }));
+//     })
+// })
 
-const battleZones = [];
+// const battleZones = [];
 
-battleZonesMap.forEach((row, i) => {
-    row.forEach((symbol, j) => {
-        if (symbol === 554)
-        battleZones.push(
-            new Boundary({
-                position: {
-                    x: j * Boundary.width + offset.x,
-                    y: i * Boundary.height + offset.y
-                }
-        }));
-    })
-})
+// battleZonesMap.forEach((row, i) => {
+//     row.forEach((symbol, j) => {
+//         if (symbol === 554)
+//         battleZones.push(
+//             new Boundary({
+//                 position: {
+//                     x: j * Boundary.width + offset.x,
+//                     y: i * Boundary.height + offset.y
+//                 }
+//         }));
+//     })
+// })
 
-console.log(battleZones);
+// console.log(battleZones);
 
 const image = new Image();
 image.src = './K_Images/town.png';
