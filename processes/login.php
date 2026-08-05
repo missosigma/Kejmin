@@ -20,11 +20,15 @@
 
   if($result->num_rows>0){
     $row = $result->fetch_all(MYSQLI_ASSOC);
-    // print_r($row);
+    print_r($row);
     // exit();
     $_SESSION["loggedIn"] = "YES";
     $_SESSION["userName"] = $row[0]["username"];
     $_SESSION["coins"] = $row[0]["coins"];
+    $_SESSION["team1"] = $row[0]["team1"];
+    $_SESSION["team2"] = $row[0]["team2"];
+    $_SESSION["team3"] = $row[0]["team3"];
+    $_SESSION["id"] = $row[0]["id"];
     $conn->close();
     header("location:../Home.php");
   }else{
@@ -32,6 +36,9 @@
     $_SESSION["loggedIn"] = "NO";
     $_SESSION["userName"] = "Hacker";
     $_SESSION["coins"] = 0;
+    $_SESSION["team1"] = 0;
+    $_SESSION["team2"] = 0;
+    $_SESSION["team3"] = 0;
     $conn->close();
     header("location:../index.php?message=LoginFaliure.");
   }
