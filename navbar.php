@@ -12,11 +12,14 @@ if($_SESSION["loggedIn"]=="YES"){
 
 ?>
 <style>
+        body {
+        margin: 0;
+        padding: 0;
+    }
     header{
-        display: flex;
-        height: 10px;
-        justify-content: flex-end;
-        align-items: flex-end; 
+       height:10px;
+        
+        
         width: 100%;
     }
 .navbar a{
@@ -24,15 +27,22 @@ if($_SESSION["loggedIn"]=="YES"){
     color: rgb(255, 253, 224);
     -webkit-text-stroke: 1px rgb(82, 50, 13);
 }
+.navcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;     
+  gap: 15px;               
+}
 .navbar{
-    position: fixed; 
+    position: sticky; 
     top: 0;
+    left:0;
     z-index: 1000;
     border: 1px solid rgb(164, 15, 184);
     background-color: rgb(11, 19, 105);
     padding: 2px;
-    width: 60%;
-    margin: 10px;
+    width: 100%;
+    margin: 0px;
     border-radius: 10px;
 }
 
@@ -45,12 +55,15 @@ ul{
             overflow:hidden;
             background-color:#B9A5E2;
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            border-radius: 10px;
+            border-radius: 5px;
+            display: flex;             
+  justify-content: center;    
+  align-items: center; 
             
             
 }
 li{
-    float:left;
+  
 }
 
 li a{
@@ -69,6 +82,7 @@ li a{
 
 </style>
 <header>
+    <div class="navcontainer">
     <nav class = "navbar">
         <ul> 
             <li><a href ="#">Hello, <?php echo $_SESSION["userName"];?>!</a></li>
@@ -80,5 +94,6 @@ li a{
             <li><a href = "tutorial.php"> Tutorial </a></li>
             <li><a href = "processes/logout.php"> Logout </a></li>
         </ul>
-    </nav>  
+    </nav> 
+</div> 
 </header>
