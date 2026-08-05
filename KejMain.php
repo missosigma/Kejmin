@@ -22,6 +22,7 @@ if($_SESSION["loggedIn"]=="YES"){
 <body>
 
     <canvas width = 800px height = 600px style = "background: white"></canvas>
+    <script src="index.js"></script>
     <script src="KejMain.js"></script>
 </body>
 </html>

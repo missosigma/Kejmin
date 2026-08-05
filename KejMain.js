@@ -1,4 +1,3 @@
-
 const context = canvas.getContext(`2d`);
 
 const play = document.getElementById('start-btn');
@@ -101,7 +100,7 @@ function drawWorld() {
     }
     
     if(enemy1x >= 0 && enemy1x + spriteSize <= canvas.width && enemy1x >= spritex + spriteSize && spritey + spriteSize/3 >= enemy1y && spritey + spriteSize - 2 <= enemy1y + spriteSize/16*25 && Math.abs(enemy1x - spritex) <= canvas.width/3 && encountered < 1) {
-      console.log("encounter");
+      alert('An enemy approached!');
       encountered++;
       window.location = `encounter.php?enemyid=1`;
     }
@@ -110,6 +109,11 @@ function drawWorld() {
     || (npc1x + spriteSize >= spritex + spriteSize/4 && npc1x + spriteSize/4 <= spritex + spriteSize && npc1y + spriteSize/14*20 - spriteSize/2 >= spritey && npc1y <= spritey)
     || (npc1x >= spritex && npc1x <= spritex + spriteSize && npc1y + spriteSize/14*20/2 >= spritey && npc1y <= spritey + spriteSize + 6)
     ) { npc1Interactable = true; } else { npc1Interactable = false; }
+    if((enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y + spriteSize/16*25 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2)
+    || (enemy1x + spriteSize >= spritex && enemy1x + spriteSize <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize + 2)
+    || (enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25 - spriteSize/2 >= spritey && enemy1y <= spritey) 
+    || (enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize/16*25 + 2)
+    ) { enemy1Interactable = true; } else { enemy1Interactable = false; }
 
     if(walking) {
         switch(direction) {
@@ -163,8 +167,19 @@ window.addEventListener('click', (event) => {
 
 
 document.addEventListener('keydown', (event) => {
-  if ((event.key === 'z' || event.key === 'Enter') && npc1Interactable) {
-    alert('The power of technology is amazing!');
+  if (event.key === 'z' || event.key === 'Enter'){ 
+    if(npc1Interactable) {
+      alert('The power of technology is amazing!');
+    }
+    if(enemy1Interactable) {
+      if(encountered < 1) {
+        alert('An enemy approached!');
+        encountered++;
+        window.location = `encounter.php?enemyid=1`;
+      } else {
+        alert('Good fight!');
+      }
+    }
   }
   if (event.key === 's' || event.key === 'ArrowDown') {
     walking = true;
