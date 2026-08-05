@@ -1,28 +1,4 @@
-<?php
-require_once("processes/dbconfig.php");
-include "back_button.php";
 
-$id = $_GET["id"];
-  $conn = new mysqli($servername, $username, $password, $database);
-  if($conn->connect_error) {
-    die("Connection Failed: " . $conn->connect_error);}
-  //send sql statement 
-  $sql ="SELECT * FROM Kejmin where kejmin_id={$id};";
-  $stmt = $conn->prepare($sql);
-  $stmt-> execute();
-  $result = $stmt->get_result();
-echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
-
-    $rows = $result->fetch_all(MYSQLI_ASSOC);
-     for($i=0;$i<count($rows);$i++){
-      $name = $rows[$i]["kejmin_name"];
-      $id = $rows[$i]["kejmin_id"];
-      $desc = $rows[$i]["kejdesc"];
-    }
-  echo "<br>";
-echo "</div>";
-$conn->close();
-?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -47,11 +23,15 @@ $conn->close();
 
     ?> 
     <h1> Your Team </h1> 
+    <h3><a>Hello, <?php echo $_SESSION["userName"];?>!</a></h3>
 <div class="card-container">
   <div class="card">
     <div class="img-wrapper">
       <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
     </div>
+    <?php
+    echo $_SESSION["team1"];
+    ?>
     <h3>Kejmin</h3>
     <h4> Health: </h4>
   </div>
