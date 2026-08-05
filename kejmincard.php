@@ -36,12 +36,16 @@ $conn->close();
     <div class = "gallery">
     <div class = "card">
  <!-- Place Holder Image -->
-<img src= "K_Images/Card_Bg.jpg">
+<div class="image-container">
+<img src= "K_Images/Card_Bg.jpg" class="background">
+ <div class ="kejmin">
  <?php
     if(is_file("K_Images/{$image}")){
     echo "<img src='K_Images/{$image}'> ";
                 }
             ?>
+    </div>
+</div>
 <h3> <?php echo $name; ?> </h3>
 <hr> 
 <h4> Description </h4> 
@@ -86,13 +90,43 @@ $conn->close();
                text-align:center;
                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
                margin-top: 40px;
+               overflow:hidden;
         }
-        .card img{
-    width:100%;
-    /* Make the border and set the radius*/
-    border: 2px solid black;
-    border-radius: 8px;
-} 
+        .image-container {
+position: relative; 
+    width: 100%; 
+    height: 180px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end;   
+
+}
+.background{
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+     border: 2px solid black;
+    border-radius:10px;
+}
+
+.kejmin{
+    position: relative; 
+    z-index: 10; 
+    width: 180px; 
+    justify-content: center;
+}
+.kejmin img {
+    width: 80%;
+    height: auto;
+    display: block;
+}
+.card-content {
+  padding: 20px;
+  flex: 1; 
+}
 h3{
     /*Set the font */
     font-family: monospace;
@@ -116,6 +150,10 @@ hr{
     background-color: black;
     width: 100%;
     height: 1px;
+}
+p{
+    font-family:Comic Sans MS;
+    font-size:12px;
 }
         </style>
 </body>
