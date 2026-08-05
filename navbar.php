@@ -1,5 +1,6 @@
 <link rel= "icon" type = "image/x-icon" href = "K_Images/KJMN.png">
 <?php 
+session_name('MY_GAME_SESSION'); 
 session_start();
 
 if($_SESSION["loggedIn"]=="YES"){

@@ -1,4 +1,5 @@
 <?php
+session_name('MY_GAME_SESSION'); 
 if(isset($_GET["message"])){
 $message = $_GET["message"]."<br>";
 }else{

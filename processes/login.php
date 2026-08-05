@@ -1,4 +1,5 @@
 <?php
+  session_name('MY_GAME_SESSION'); 
   session_start(); // need to run to access session data 
   $user = $_POST["username"];
   $pass = $_POST["password"];
