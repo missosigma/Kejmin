@@ -22,11 +22,11 @@
 </head>
 <body>
     <div class = "buttoncontainer">
-    <a class = "button" href = "kejmincard.php?id=6">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php?id=7">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php?id=8">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php?id=9">Kejmin</a><br>
-    <a class = "button" href = "kejmincard.php?id=10">Kejmin</a><br>
+    <a class = "button" href = "kejmincard.php?id=6">Aerk</a><br>
+    <a class = "button" href = "kejmincard.php?id=7">Sleaf</a><br>
+    <a class = "button" href = "kejmincard.php?id=8">Sweeterie</a><br>
+    <a class = "button" href = "kejmincard.php?id=9">Fanzo</a><br>
+    <a class = "button" href = "kejmincard.php?id=10">Getzy</a><br>
     <a class = "button" href = "kejmincard.php?id=11">Kejmin</a><br>
     <a class = "button" href = "kejmincard.php?id=12">Kejmin</a><br>
 </div>

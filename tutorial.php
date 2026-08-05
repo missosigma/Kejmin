@@ -42,6 +42,10 @@
     D = Right <br> <br>
     Click the buttons on your screen to access different menus. <br> <br>
 
+    A chart of the different Types and their effectiveness! <Br> <br>
+    <img src = "K_Images/ElementChart.png" width = 500px height = 500px> <br> <br>
+    This is also available when you are in battle. <br> <br>
+
     You can always come back to the tutorial by clicking the "Tutorial" button! 
   </text> 
   </div> 
@@ -49,4 +53,5 @@
 </html>
 
 
-<!-- You gotta make like it closeable and be able to be put on the front page.. -->
+<!-- You gotta make like it closeable and be able to be put on the front page.. --> 
+ <!-- or not // depends on time ^^ this is a quality of life thing -->

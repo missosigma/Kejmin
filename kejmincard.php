@@ -1,5 +1,6 @@
 <?php
 require_once("processes/dbconfig.php");
+include "back_button.php";
 
 $id = $_GET["id"];
   $conn = new mysqli($servername, $username, $password, $database);
@@ -17,10 +18,6 @@ echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
       $name = $rows[$i]["kejmin_name"];
       $id = $rows[$i]["kejmin_id"];
       $desc = $rows[$i]["kejdesc"];
-      echo $name;
-      echo "</a>";
-      echo "<br><br>";
-      
     }
   echo "<br>";
 echo "</div>";
