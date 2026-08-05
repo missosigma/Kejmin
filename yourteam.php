@@ -28,7 +28,7 @@
         die("Connection Failed: " . $conn->connect_error);
       }
       //Prepare sql message 
-      $sql = "Select * from users where username={$userId};";
+      $sql = "Select * from users where username='$userId';";
       //send ts sql message
       $stmt = $conn->prepare($sql);
       $stmt->execute();
@@ -36,8 +36,44 @@
 
       if($result->num_rows>0){
       $row = $result->fetch_all(MYSQLI_ASSOC);}
-      print_r($row);
+      // print_r($row);
+      $team1 = $row[0]['team1'];
+      $team2 = $row[0]['team2'];
+      $team3 = $row[0]['team3'];
 
+      $sql = "Select * from Kejmin where kejmin_id='$team1';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      // print_r($row);
+      $team1Name = $row[0]['kejmin_name'];
+      
+
+      $sql = "Select * from Kejmin where kejmin_id='$team2';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      // print_r($row);
+      $team2Name = $row[0]['kejmin_name'];
+
+      $sql = "Select * from Kejmin where kejmin_id='$team3';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      //print_r($row);
+      $team3Name = $row[0]['kejmin_name'];
+
+
+      // echo $team3;
       $conn->close();
       ?>
       <h1> Your Team </h1> 
@@ -48,7 +84,7 @@
         <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
       </div>
       
-      <h3>Kejmin</h3>
+      <h3><?php echo $team1Name; ?></h3>
       <h4> Health: </h4>
     </div>
     
@@ -56,7 +92,7 @@
       <div class="img-wrapper">
         <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
       </div>
-      <h3>Kejmin</h3>
+      <h3><?php echo $team2Name; ?></h3>
       <h4> Health: </h4>
     </div>
 
@@ -64,7 +100,7 @@
       <div class="img-wrapper">
         <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
       </div>
-      <h3>Kejmin</h3>
+      <h3><?php echo $team3Name; ?></h3>
       <h4> Health: </h4>
     </div>
   </div>

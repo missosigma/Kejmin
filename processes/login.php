@@ -29,6 +29,12 @@
     $_SESSION["team2"] = $row[0]["team2"];
     $_SESSION["team3"] = $row[0]["team3"];
     $_SESSION["id"] = $row[0]["id"];
+    $_SESSION["health1"] = $row[0]["health1"];
+    $_SESSION["health2"] = $row[0]["health2"];
+    $_SESSION["health3"] = $row[0]["health3"];
+    $_SESSION["level1"] = $row[0]["level1"];  
+    $_SESSION["level2"] = $row[0]["level2"];
+    $_SESSION["level3"] = $row[0]["level3"];
     $conn->close();
     header("location:../Home.php");
   }else{
@@ -39,6 +45,13 @@
     $_SESSION["team1"] = 0;
     $_SESSION["team2"] = 0;
     $_SESSION["team3"] = 0;
+    $_SESSION["id"] = 0;
+    $_SESSION["health1"] = 0;
+    $_SESSION["health2"] = 0;
+    $_SESSION["health3"] = 0;
+    $_SESSION["level1"] = 0;
+    $_SESSION["level2"] = 0;
+    $_SESSION["level3"] = 0;
     $conn->close();
     header("location:../index.php?message=LoginFaliure.");
   }

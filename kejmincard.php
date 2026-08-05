@@ -37,7 +37,7 @@ $conn->close();
     <div class = "card">
  <!-- Place Holder Image -->
 <div class="image-container">
-<img src= "K_Images/Card_Bg.jpg" class="background">
+<img src= "K_Images/Card_Bg.png" class="background">
  <div class ="kejmin">
  <?php
     if(is_file("K_Images/{$image}")){
