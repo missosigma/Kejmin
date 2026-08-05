@@ -105,14 +105,14 @@ function drawWorld() {
       window.location = `encounter.php?enemyid=1`;
     }
 
-    if((npc1x + spriteSize >= spritex && npc1x + spriteSize <= spritex + spriteSize && npc1y + spriteSize/14*20/2 >= spritey && npc1y <= spritey + spriteSize + 6) 
-    || (npc1x + spriteSize >= spritex + spriteSize/4 && npc1x + spriteSize/4 <= spritex + spriteSize && npc1y + spriteSize/14*20 - spriteSize/2 >= spritey && npc1y <= spritey)
-    || (npc1x >= spritex && npc1x <= spritex + spriteSize && npc1y + spriteSize/14*20/2 >= spritey && npc1y <= spritey + spriteSize + 6)
+    if((spritesy == 1997*2/4 && npc1x + spriteSize >= spritex && npc1x + spriteSize <= spritex + spriteSize && npc1y + spriteSize/14*20/2 >= spritey && npc1y <= spritey + spriteSize + 6) 
+    || (spritesy == 1997/4 && npc1x + spriteSize >= spritex + spriteSize/4 && npc1x + spriteSize/4 <= spritex + spriteSize && npc1y + spriteSize/14*20 - spriteSize/2 >= spritey && npc1y <= spritey)
+    || (spritesy == 1997*3/4 && npc1x >= spritex && npc1x <= spritex + spriteSize && npc1y + spriteSize/14*20/2 >= spritey && npc1y <= spritey + spriteSize + 6)
     ) { npc1Interactable = true; } else { npc1Interactable = false; }
-    if((enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y + spriteSize/16*25 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2)
-    || (enemy1x + spriteSize >= spritex && enemy1x + spriteSize <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize + 2)
-    || (enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25 - spriteSize/2 >= spritey && enemy1y <= spritey) 
-    || (enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize/16*25 + 2)
+    if((spritesy == 1997*3/4 && enemy1x >= spritex && enemy1x <= spritex + spriteSize && enemy1y + spriteSize/16*25 >= spritey + spriteSize/16*25/2 && enemy1y <= spritey + spriteSize + 2)
+    || (spritesy == 1997*2/4 && enemy1x + spriteSize >= spritex && enemy1x + spriteSize <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize + 2)
+    || (spritesy == 1997/4 && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25 - spriteSize/2 >= spritey && enemy1y <= spritey) 
+    || (spritesy == 0 && enemy1x + spriteSize >= spritex + spriteSize/4 && enemy1x + spriteSize/4 <= spritex + spriteSize && enemy1y + spriteSize/16*25/2 >= spritey && enemy1y <= spritey + spriteSize/16*25 + 2)
     ) { enemy1Interactable = true; } else { enemy1Interactable = false; }
 
     if(walking) {
