@@ -7,18 +7,64 @@
   <title>Tutorial</title>
   <style>
     .t_text {
-      background-color: yellow;
+      background-color: #B9A5E2;
       padding: 30px;
-      border: 1px solid #ccc;
+      border: 1px solid black;
       border-radius: 20px;
       font-size: 150%;
+      font-family: monospace;
+      -webkit-text-stroke:0.2px white;
     }
     .bigger_text {
       font-size: 170%;
+      font-family:Impact;
+      -webkit-text-stroke:0.5px white;
+    }
+    .controls-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  text-align: left;
+}
+    .upcontainer{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+    .uparrow{
+      width:20px;
+      height:auto;
+    }
+    .leftcontainer{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+    }
+   .leftarrow{
+    width:20px;
+    height:auto;
+   }
+   .downcontainer{
+    display:inline-flex;
+      align-items:center;
+      gap:10px;
+   }
+   .downarrow{
+    width:10px;
+    height:auto;
+   }
+   .rightcontainer{
+     display:inline-flex;
+      align-items:center;
+      gap:10px;
+   }
+    .rightarrow{
+        width:20px;
+    height:auto;
     }
   </style>
 </head>
-<body bgcolor = "orange">
+<body bgcolor = #a898ce>
  <?php 
         include "back_button.php";
         
@@ -36,10 +82,26 @@
     ?> 
   <div class = "t_text">
   <text> <div class ="bigger_text">Welcome to Kejmin!</div><br>
-    W = Up <br>
-    A = Left <br>
-    S = Down <br>
-    D = Right <br> <br>
+   <div class="controlswrapper">
+  <div class ="upcontainer">
+          W = Up
+    <img src="K_Images/Uparrow.png" class ="uparrow">
+</div><br>
+<div class ="leftcontainer">
+    A = Left 
+    <img src="K_Images/Leftarrow.png" class = "leftarrow">
+</div><br>
+<div class = "downcontainer">
+    S = Down 
+    <img src="K_Images/Downarrow.png" class = "downarrow">
+</div><br>
+<div class = "rightcontainer">
+    D = Right 
+    <img src ="K_Images/Rightarrow.png" class = "rightarrow">
+</div>
+</div>
+<br><br>
+      Press Z to interact with mobs.<br><br>
     Click the buttons on your screen to access different menus. <br> <br>
 
     A chart of the different Types and their effectiveness! <Br> <br>
