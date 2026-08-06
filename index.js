@@ -270,3 +270,41 @@ window.addEventListener('keyup', (e) => {
             break;
     }
 })
+
+
+const townmusic = new Audio('K_Audio/town4.mp3'); townmusic.loop = true;
+let townMusicStarted = false;
+let gameStart = false;
+const play = document.getElementById('start-btn');
+const playButton = new Image(); playButton.src = 'K_Images/play.png';
+
+function playTownMusic() {
+  if (!townmusic.paused) return;
+  townmusic.play()
+    .then(() => { townMusicStarted = true; })
+    .catch(error => console.log('townmusic play blocked', error));
+}
+
+window.addEventListener('pageshow', (event) => {
+  if ((event.persisted || document.visibilityState === 'visible') && townMusicStarted) {
+    playTownMusic();
+  }
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && townMusicStarted) {
+    playTownMusic();
+  }
+});
+
+playButton.onload = function() { c.drawImage(playButton, canvas.width/2-64,canvas.height/2-64, 128, 128); };
+window.addEventListener('click', (event) => {
+    if(!gameStart) {
+    //   window.setInterval(gameCheck,1000/20);
+      playTownMusic();
+      gameStart = true;
+    }
+    if (townMusicStarted && townmusic.paused) {
+      playTownMusic();
+    }
+});
