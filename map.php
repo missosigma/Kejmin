@@ -17,6 +17,6 @@
 Le mapping 
 <!-- take id from users table database then choose map based on it -->
  <!-- OOORRRR // fuse whole map  -->
-<image>
+<button type = "button">
 <image>
 <image>
