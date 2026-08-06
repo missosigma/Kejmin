@@ -13,16 +13,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const button = event.target.closest('.move');
         if (!button) return;
         const moveId = +button.dataset.id - 1;
-        const moveName = button.textContent.trim();
-        console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
-        
-        if(Math.random() * 2 > 1) {
-            moveCalc(moveId, playerKejId, enemyKejId);
-            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-        } else {
-            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-            moveCalc(moveId, playerKejId, enemyKejId);
-        }
+        if(playerHP > 0 && enemyHP > 0) {
+            if(Math.random() * 2 > 1) {
+                moveCalc(moveId, playerKejId, enemyKejId);
+                if(enemyHP > 0) {
+                    moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                    if(playerHP <= 0) { gameOver(); }
+                } else { gameOver(); }
+            } else {
+                moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                if(playerHP > 0) {
+                    moveCalc(moveId, playerKejId, enemyKejId);
+                    if(enemyHP <= 0) { gameOver(); }
+                } else { gameOver(); }
+            }
+        } else { gameOver(); }
     });
 });
 
@@ -198,6 +203,7 @@ function moveCalc(movePicked, attackingId, defendingId) {
     
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 // movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
@@ -213,3 +219,9 @@ function fight (){
     
 }
 >>>>>>> ae14f21 (random enemy)
+=======
+
+function gameOver() {
+    window.history.back();
+}
+>>>>>>> 386a3ca (Made battle end properly)
