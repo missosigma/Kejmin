@@ -113,6 +113,10 @@ $conn->close();
       <?php endif; ?>
       <canvas width="800" height="600" style="background: transparent; display: block; margin: 0 auto; position: relative; z-index: 0;"></canvas>
     </div>
-    <script src="encounter.js"></script>
+    <div id="team1" data-db="<?php echo htmlspecialchars($team1, ENT_QUOTES, 'UTF-8'); ?>"></div>
+    <div id="team2" data-db="<?php echo htmlspecialchars($team2, ENT_QUOTES, 'UTF-8'); ?>"></div>
+    <div id="team3" data-db="<?php echo htmlspecialchars($team3, ENT_QUOTES, 'UTF-8'); ?>"></div>
+    <script src="encounter.js">
+    </script>
 </body>
 </html>
