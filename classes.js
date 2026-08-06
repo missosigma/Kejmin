@@ -1,3 +1,40 @@
+class Sprite {
+    constructor({ position, velocity, image, frames = {max: 1} }){ 
+        this.position = position;
+        this.image = image;
+        this.frames = frames;
+
+        this.image.onload = () => {
+            this.width = this.image.width / this.frames.max;
+            this.height = this.image.height;
+        }
+        
+    }
+
+    draw() {
+        // c.drawImage(this.image, this.position.x, this.position.y);
+
+        const newWidth = playerImage.width * 0.05;
+        const newHeight = playerImage.height * 0.1;
+        
+        c.drawImage(
+        this.image, 
+        0,
+        0,
+        this.image.width / this.frames.max,
+        this.image.height,
+        this.position.x,
+        this.position.y,
+
+        // canvas.width / 4 - newWidth / 20, 
+        // canvas.height / 2 - newHeight / 2, newWidth, newHeight,
+
+        this.image.width / this.frames.max,
+        this.image.height
+        );
+    }
+} 
+
 class Boundary {
     static width = 48;
     static height = 48;
@@ -8,7 +45,7 @@ class Boundary {
     }
 
     draw() {
-        c.fillStyle = 'rgba(255, 0, 0, 0.0)';
+        c.fillStyle = 'rgba(255, 0, 0, 0.0';
         c.fillRect(this.position.x, this.position.y, this.width, this.height);
     }
 }
