@@ -36,7 +36,6 @@
     $_SESSION["level1"] = $row[0]["level1"];  
     $_SESSION["level2"] = $row[0]["level2"];
     $_SESSION["level3"] = $row[0]["level3"];
-
     $conn->close();
 
     $team1 = intval($_SESSION["team1"] ?? 0);

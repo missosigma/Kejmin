@@ -5,7 +5,105 @@ What we want!! !!
 and the opponent's health lowers.
 
 - (xtra - any effects)
-<?php include "../battlenavbar.php" ?>
+<!-- <?php include "../battlenavbar.php" ?> -->
+ <?php
+
+
+ require_once("dbconfig.php");
+
+      if($_SESSION["loggedIn"]=="YES"){
+
+      }else{
+          // echo "You are a scammer.";
+          header("location:index.php");
+          exit;
+      }
+
+      $userId = $_SESSION['userName'];
+      $_SESSION["team1"];
+      $conn = new mysqli($servername, $username, $password, $database);
+      if($conn->connect_error){
+        die("Connection Failed: " . $conn->connect_error);
+      }
+      //Prepare sql message 
+      $sql = "Select * from users where username='$userId';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      // print_r($row);
+      $team1 = $row[0]['team1'];
+      $team2 = $row[0]['team2'];
+      $team3 = $row[0]['team3'];
+// kejmin 1 help me ... ahhhhhhrhrhrhrh///////////////////////////////////////////////////////////////////////////////////////
+      $sql = "Select * from Kejmin where kejmin_id='$team1';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      $move1 = $row[0]['move1'];
+      $move2 = $row[0]['move2'];
+      $move3 = $row[0]['move3'];
+//
+      $sql = "Select * from attack_table where attack_id='$move1';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      $attackname11 = $row[0]['attack_name'];
+//
+    $sql = "Select * from attack_table where attack_id='$move2';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      $attackname12 = $row[0]['attack_name'];
+//
+    $sql = "Select * from attack_table where attack_id='$move3';";
+      //send ts sql message
+      $stmt = $conn->prepare($sql);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      if($result->num_rows>0){
+      $row = $result->fetch_all(MYSQLI_ASSOC);}
+      $attackname13 = $row[0]['attack_name'];
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,9 +156,9 @@ and the opponent's health lowers.
  
   <nav id="movebar" class="bottom-right-nava">
     <ul>
-      <li><button class="move" data-id="1"> Move 3: </button></li>
-      <li><button class="move" data-id="2"> Move 2: </button></li>
-      <li><button class="move" data-id="3"> Move 1: </button></li>
+      <li><button class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
+      <li><button class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
+      <li><button class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
     </ul>
   </nav>
   <script src="attackbar.js"></script>

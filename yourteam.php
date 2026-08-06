@@ -12,7 +12,7 @@
           
       session_name('MY_GAME_SESSION');
       session_start();
-      require_once("processes/dbconfig.php");
+      require_once("dbconfig.php");
 
       if($_SESSION["loggedIn"]=="YES"){
 

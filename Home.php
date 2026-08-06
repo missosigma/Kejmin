@@ -44,6 +44,7 @@ if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
     <a class = "button" href = "navbar.php"> Navbar (testing current)</a> </Br></br>
     <a class = "button" href = "KejMain.php"> Testing Game </a> </Br></br>
     <a class = "button" href = "chooseyourkejmin.php"> Possible Change Team </a> <br><br>
+    <a class = "button" href = "encounter.php"> Encounter (Testing) </a><br><br>
     <a></a>
     
 </body>
