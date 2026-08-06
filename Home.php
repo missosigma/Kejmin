@@ -36,17 +36,20 @@ if ($team1 === 0) {
   
     <!-- ^^ add to any page to include the navbar!!  -->
     <h1>Welcome to the Kejmin starting page.</h1>
-    <h2>(In development.)</h2>
-    <h2>Turn your volume down we have noise!!</h2>
+    <h2></h2>
+    <h2>Click for Music! Refresh to stop.</h2>
+    <h2></h2>
     <a></a>
     <p>Links</p>
     <p>|</p>
     <p>v</p>
 <div class="button-group">
-  <a class="button" href="navbar.php">Navbar (testing current)</a>
-  <a class="button" href="KejMain.php">Testing Game</a>
-  <a class="button" href="chooseyourkejmin.php">Possible Change Team</a>
-  <a class = "button" href = "encounter.php"> Encounter (Testing) </a>
+  <!-- <a class="button" href="navbar.php"></a>
+  <a class="button" href="KejMain.php"></a> -->
+  <a class = "button" href = "KejMain.php">Start</a>
+  <a class="button" href="chooseyourkejmin.php">Change Your Kejmin</a>
+  <a class = "button" href = "encounter.php">Fight!</a>
+  
 </div>
     
 </body>
@@ -78,6 +81,7 @@ p{
     font-family:monospace;
     font-size:20px;
     font-weight:bold;
+    margin: 0;
 }
 
 
