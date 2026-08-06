@@ -43,6 +43,11 @@
       $move3 = $row[0]['move3'];
 
 ?>
+<?PHP
+include "Battle Navbar Files/attack.php"
+?>
+<script src="Battle Navbar Files/attackbar.js"></script>
+
 
 <style>
 .bottom-right-nav{
@@ -93,7 +98,7 @@ li a{
 }
 
    li a:hover{
-            background-color: #a898ce;
+            background-color: #8f6cdf;
         }
 .hidden {
   display: none !important;

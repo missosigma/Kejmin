@@ -1,4 +1,6 @@
 <?php
+
+
 session_name('MY_GAME_SESSION');
 session_start();
 require_once "processes/dbconfig.php";
@@ -86,6 +88,9 @@ if ($userId) {
 
 $conn->close();
 ?>
+<?php
+        include "battlenavbar.php";
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,9 +104,7 @@ $conn->close();
 </head>
 
 <body style="margin: 0; min-height: 100vh; background: url('K_Images/battleBackground.png') no-repeat center center fixed; background-size: cover;">
-    <?php
-        include "battlenavbar.php";
-    ?>
+    
     <div style="position: relative; width: 1200px; max-width: 100%; margin: 0 auto; padding: 40px 0;">
       <?php if ($team1Image): ?>
       <img src="K_Images/<?php echo htmlspecialchars($team1Image); ?>" alt="<?php echo htmlspecialchars($kejmin1); ?>" style="position: absolute; left: 200px; top: 100px; width: 420px; height: auto; z-index: 1; transform: scaleX(-1);" />
@@ -168,3 +171,5 @@ $conn->close();
 }
 
     </style>
+
+    

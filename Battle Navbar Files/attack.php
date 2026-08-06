@@ -1,6 +1,4 @@
-
-
-- (xtra - any effects)
+(
 <!-- <?php include "../battlenavbar.php" ?> -->
  <?php
 
@@ -85,7 +83,23 @@
 
 
 
+<script>
+function move1 {
+  document.getElementById("hi").innerHTML = "Hello World";
+  console.log("Yo")
+}
 
+function move2 {
+  document.getElementById("hi").innerHTML = "Hello";
+  console.log("Yo2")
+}
+
+function move3 {
+  document.getElementById("hi").innerHTML = "World";
+  console.log("Yo3")
+}
+
+</script>
 
 
 <!DOCTYPE html>
@@ -128,7 +142,7 @@
       width: 100%;
     }
     .bottom-right-nava button:hover {
-      background-color: #a898ce;
+      background-color: #8265c6;
     }
     .hidden {
   display: none !important;
@@ -137,29 +151,19 @@
 </head>
 <body>
 
- 
+   
   <nav id="movebar" class="bottom-right-nava">
     <ul>
+       <p id = "hi"></p>
       <li><button onclick="move1()" class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
       <li><button onclick="move2()" class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
       <li><button onclick="move3()" class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
     </ul>
   </nav>
   <script src="attackbar.js"></script>
+  <script> 
 </body>
 </html>
 
-<script>
-function move1 {
-  
-}
-function move2 {
 
-}
-function move3 {
-
-}
-
-
-
-</script>
+)

@@ -2,6 +2,8 @@ const moves = document.querySelectorAll('.move');
 const attack = document.querySelector('.attack');
 const movebar = document.getElementById('movebar');
 
+<script src= "attack.php"></script>
+
 moves.forEach(button => {
   button.addEventListener('click', () => {
     clearmovebar();
