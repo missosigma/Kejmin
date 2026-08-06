@@ -14,9 +14,8 @@
 
 
     ?> 
-Le mapping 
-<!-- take id from users table database then choose map based on it -->
- <!-- OOORRRR // fuse whole map  -->
-<button type = "button">
+
+
+<img src="K_Images/town.png" width = "100%">
 <image>
 <image>

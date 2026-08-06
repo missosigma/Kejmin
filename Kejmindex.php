@@ -52,7 +52,7 @@ body{
 }
     .button{
        display:inline-block;
-       font-size:32px;
+       font-size:64px;
        justify-content: center;
        align-items:center;
         background-image:url(https://img.magnific.com/premium-photo/old-yellow-grunge-background-blank-crumpled-paper_186380-1525.jpg);

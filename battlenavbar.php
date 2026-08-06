@@ -46,6 +46,8 @@
 <?PHP
 include "Battle Navbar Files/attack.php"
 ?>
+<link rel= "icon" type = "image/x-icon" href = "K_Images/Sword.png">
+<script src="Battle Navbar Files/attackbar.js"></script>
 
 
 <style>
