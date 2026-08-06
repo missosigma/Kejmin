@@ -88,58 +88,59 @@
 <head> 
   <style> 
 .bottom-right-nava { 
-   position: fixed !important; 
-    bottom: 140px !important;      
-    right: 0 !important;       
-    display: flex !important; 
-    flex-direction: row !important; 
-    flex-wrap: nowrap !important; 
-    gap: 0px;                  
-    border: 2px solid black; 
-    border-bottom: none;       
-    border-right: none;        
-    z-index: 999999 !important; 
-    background-color: #B9A5E2;
-    margin: 0 !important;      
-    padding: 0 !important;
+  position: fixed !important; 
+  bottom: 140px !important; 
+  right: 0 !important; 
+  display: flex !important; 
+  flex-direction: row !important; 
+  flex-wrap: nowrap !important; 
+  gap: 0px; 
+  border: 2px solid black; 
+  border-bottom: none; 
+  border-right: none; 
+  z-index: 999999 !important; 
+  background-color: #B9A5E2; 
+  margin: 0 !important; 
+  padding: 0 !important; 
 } 
-/* Strips out the default browser padding and spacing lists use */
+
 .bottom-right-nava ul { 
-    display: flex;
-    flex-direction: row;
-    list-style-type: none; 
-    margin: 0 !important; 
-    padding: 0 !important; 
-    overflow: hidden; 
-    background-color: #B9A5E2; 
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-}
+  display: flex; 
+  flex-direction: row; 
+  list-style: none !important; 
+  list-style-type: none !important; 
+  margin: 0 !important; 
+  padding: 0 !important; 
+  overflow: hidden; 
+  background-color: #B9A5E2; 
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+} 
 
-.bottom-right-nava li {
-    margin: 0 !important;
-    padding: 0 !important;
-}
+.bottom-right-nava li { 
+  margin: 0 !important; 
+  padding: 0 !important; 
+  list-style: none !important; 
+} 
 
-/* Adjusts the buttons to align flush together in the corner */
 button { 
-    background-color: #B9A5E2; 
-    color: white; 
-    font-family: Impact, sans-serif; 
-    -webkit-text-stroke: 0.5px black; 
-    font-size: 18px;            /* Clear text sizing */
-    padding: 16px 24px;         /* Uniform gaming button area */
-    margin: 0 !important;       /* Eliminates gaps between button frames */
-    border: none; 
-    cursor: pointer; 
-    white-space: nowrap !important; 
-    width: auto !important; 
-    position: relative;
-    z-index: 1000000;           /* Secures input priority over other layouts */
-    border-left: 1px solid rgba(0, 0, 0, 0.2); /* Soft separator between internal options */
-}
+  background-color: #B9A5E2; 
+  color: white; 
+  font-family: Impact, sans-serif; 
+  -webkit-text-stroke: 0.5px black; 
+  font-size: 18px; 
+  padding: 16px 24px; 
+  margin: 0 !important;
+  border: none; 
+  cursor: pointer; 
+  white-space: nowrap !important; 
+  width: auto !important; 
+  position: relative; 
+  z-index: 1000000; 
+  border-left: 1px solid rgba(0, 0, 0, 0.2); 
+} 
 
 button:hover { 
-    background-color: #8265c6 !important; 
+  background-color: #8265c6 !important; 
 }
 </style>
 </head>
