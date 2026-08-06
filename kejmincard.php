@@ -6,6 +6,7 @@ $id = $_GET["id"];
   $conn = new mysqli($servername, $username, $password, $database);
   if($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);}
+    
   //send sql statement 
   $sql ="SELECT * FROM Kejmin where kejmin_id={$id};";
   $stmt = $conn->prepare($sql);

@@ -73,8 +73,6 @@ try {
                 <button id="cancel" type="button" onclick="history.back()">Cancel</button>
             </div>
 
-            <div class="note">After saving, you will be redirected to Home.</div>
-
         </form>
     </div>
 

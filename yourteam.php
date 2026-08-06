@@ -28,6 +28,7 @@
       if($conn->connect_error){
         die("Connection Failed: " . $conn->connect_error);
       }
+
       //Prepare sql message 
       $sql = "Select * from users where username='$userId';";
       //send ts sql message
@@ -51,6 +52,9 @@
       $row = $result->fetch_all(MYSQLI_ASSOC);}
       // print_r($row);
       $team1Name = $row[0]['kejmin_name'];
+      $cleanName = trim($team1Name);
+      $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+      $image1 = str_replace(' ', '', $cleanName) . '.png';
       
 
       $sql = "Select * from Kejmin where kejmin_id='$team2';";
@@ -62,6 +66,10 @@
       $row = $result->fetch_all(MYSQLI_ASSOC);}
       // print_r($row);
       $team2Name = $row[0]['kejmin_name'];
+      $cleanName = trim($team2Name);
+      $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+      $image2 = str_replace(' ', '', $cleanName) . '.png';
+
 
       $sql = "Select * from Kejmin where kejmin_id='$team3';";
       //send ts sql message
@@ -72,6 +80,10 @@
       $row = $result->fetch_all(MYSQLI_ASSOC);}
       //print_r($row);
       $team3Name = $row[0]['kejmin_name'];
+      $cleanName = trim($team3Name);
+      $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+      $image3 = str_replace(' ', '', $cleanName) . '.png';
+
 
 
       // echo $team3;
@@ -80,8 +92,16 @@
       <h1> Your Team </h1> 
   <div class="card-container">
     <div class="card">
+      <img src="K_Images/Card_Bg.png" alt="Kejmin">
       <div class="img-wrapper">
-        <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
+    <?php
+    $imagePath = __DIR__ . '/K_Images/' . $image1;
+    if (is_file($imagePath)) {
+        echo "<img src='K_Images/{$image1}'> ";
+    } else {
+        // fallback placeholder if image missing
+        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
+    ?> 
       </div>
       
       <h3><?php echo $team1Name; ?></h3>
@@ -89,22 +109,50 @@
     </div>
     
     <div class="card">
+      <img src="K_Images/Card_Bg.png" alt="Kejmin">
       <div class="img-wrapper">
-        <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
+        <?php
+    $imagePath = __DIR__ . '/K_Images/' . $image2;
+    if (is_file($imagePath)) {
+        echo "<img src='K_Images/{$image2}'> ";
+    } else {
+        // fallback placeholder if image missing
+        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
+    ?> 
       </div>
       <h3><?php echo $team2Name; ?></h3>
       <h4> Health: </h4>
     </div>
 
     <div class="card">
+      <img src="K_Images/Card_Bg.png" alt="Kejmin">
       <div class="img-wrapper">
-        <img src="https://picsum.photos/id/237/536/354" alt="Kejmin">
+        <?php
+    $imagePath = __DIR__ . '/K_Images/' . $image3;
+    if (is_file($imagePath)) {
+        echo "<img src='K_Images/{$image3}'> ";
+    } else {
+        // fallback placeholder if image missing
+        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
+    ?> 
       </div>
       <h3><?php echo $team3Name; ?></h3>
       <h4> Health: </h4>
     </div>
   </div>
                                                   <style>
+                                                    .kejmin{
+                                                      position: relative; 
+                                                      z-index: 10; 
+                                                      width: 180px; 
+                                                      justify-content: center;
+                                                  }
+                                                  .kejmin img {
+                                                      width: 80%;
+                                                      margin-left: 30px;
+                                                      height: auto;
+                                                      display: block;
+                                                  }
                                                   *, *::before, *::after {
                                                     box-sizing: border-box;
                                                     margin: 0;
@@ -130,19 +178,25 @@
                                                       margin: 20px auto;     
                                                   }
 
-                                                  .card {
-                                                    width: calc(70% - 20px);    
-                                                    flex-basis: calc(70% - 20px); 
-                                                    aspect-ratio: 1 / 1; 
-                                                    background-color: white;
+                                                  .card{
+                                                  /*Set the width and height of card */
+                                                    width:300px;
+                                                    height: 500px;
+                                                    /*Set background color */
+                                                    background-color:white;
+                                                    /*Make the border and set radius */
+                                                    border: 2px solid black;
                                                     border-radius:10px;
-                                                      padding:10px;
-                                                      text-align:center;    
-                                                      border: 2px solid black;  
-                                                  }      
-                                                  
+                                                    padding:10px;
+                                                    text-align:center;
+                                                    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                                                    margin-top: 40px;
+                                                    overflow:hidden;
+                                                    }
                                                   .card img {
                                                         width:100%;
+                                                        height: auto;
+                                                        display: block;
                                                       border-radius: 8px;
                                                       border: 2px solid black;
                                                   } 
