@@ -1,3 +1,10 @@
+<!-- <script>
+const randomNumber = Math.floor(Math.random() * 5) + 6;
+console.log(randomNumber);
+
+console.log(randomNumber, randomImage)
+
+</script> -->
 <?php
 
 
@@ -16,6 +23,24 @@ $conn = new mysqli($servername, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection Failed: " . $conn->connect_error);
 }
+$enemyTeam = '10';
+$enemyImage = 'getzy.gif';
+$randomNumber = random_int(6, 10);
+if ($randomNumber === 6){
+    $enemyImage = "Aerk.gif";
+} 
+if ($randomNumber === 7){
+    $enemyImage = "Sleaf.gif";
+} 
+if ($randomNumber === 8){
+    $enemyImage = "Sweeterie.gif";
+} 
+if ($randomNumber === 9){
+    $enemyImage = "Fanzo.gif";
+} 
+if ($randomNumber === 10){
+    $enemyImage = "Getzy.gif";
+} 
 
 $user = null;
 $team1 = null;
@@ -25,12 +50,7 @@ $kejmin1 = '';
 $kejmin2 = '';
 $team1Image = '';
 $team2Image = '';
-$enemyTeam = [
-    $_SESSION["enemyKejmin1"] ?? '',
-    $_SESSION["enemyKejmin2"] ?? '',
-    $_SESSION["enemyKejmin3"] ?? '',
-];
-$enemyImage = '';
+
 $imageDir = __DIR__ . '/K_Images';
 
 function formatKejminImageName($name) {
@@ -50,11 +70,10 @@ if ($userId) {
 
     if ($user) {
         $team1 = $user['team1'] ?? null;
-        $team2 = $user['team2'] ?? null;
-        $team3 = $user['team3'] ?? null;
+       
 
         $teamIds = [];
-        foreach ([$team1, $team2, $team3] as $teamId) {
+        foreach ([$team1] as $teamId) {
             $teamId = intval($teamId);
             if ($teamId > 0) {
                 $teamIds[] = $teamId;
@@ -111,7 +130,7 @@ $conn->close();
       <img src="K_Images/<?php echo htmlspecialchars($team1Image); ?>" alt="<?php echo htmlspecialchars($kejmin1); ?>" style="position: absolute; left: 150px; top: 120px; width: 420px; height: auto; z-index: 1; transform: scaleX(-1);" />
       <?php endif; ?>
       <?php if ($enemyImage): ?>
-      <img src="K_Images/<?php echo htmlspecialchars($enemyImage); ?>" alt="Enemy" style="position: absolute; left: 900px; top: 50px; width: 180px; height: auto; z-index: 1;" />
+      <img src="K_Images/<?php echo htmlspecialchars($enemyImage); ?>" alt="Enemy" style="position: absolute; left: 900px; top: 40px; width: 180px; height: auto; z-index: 1;" />
       <?php elseif ($team2Image): ?>
       <img src="K_Images/<?php echo htmlspecialchars($team2Image); ?>" alt="<?php echo htmlspecialchars($kejmin2); ?>" style="position: absolute; left: 1000px; top: 40px; width: 180px; height: auto; z-index: 1;" />
       <?php endif; ?>
