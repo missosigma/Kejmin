@@ -89,128 +89,170 @@
       // echo $team3;
       $conn->close();
       ?>
-      <h1> Your Team </h1> 
-  <div class="card-container">
-    <div class="card">
-      <img src="K_Images/Card_Bg.png" alt="Kejmin">
-      <div class="img-wrapper">
-    <?php
-    $imagePath = __DIR__ . '/K_Images/' . $image1;
-    if (is_file($imagePath)) {
-        echo "<img src='K_Images/{$image1}'> ";
-    } else {
-        // fallback placeholder if image missing
-        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
-    ?> 
-      </div>
+ <div class="card-container">
+
+  <div class="card">
+    <div class="card-image-box">
+      <img src="K_Images/Card_Bg.png" class="card-bg" alt="Background">
       
-      <h3><?php echo $team1Name; ?></h3>
-      <h4> Health: </h4>
-    </div>
-    
-    <div class="card">
-      <img src="K_Images/Card_Bg.png" alt="Kejmin">
-      <div class="img-wrapper">
+      <div class="kejmin-wrapper">
         <?php
-    $imagePath = __DIR__ . '/K_Images/' . $image2;
-    if (is_file($imagePath)) {
-        echo "<img src='K_Images/{$image2}'> ";
-    } else {
-        // fallback placeholder if image missing
-        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
-    ?> 
+          $imagePath = __DIR__ . '/K_Images/' . $image1;
+          if (is_file($imagePath)) {
+              echo "<img src='K_Images/{$image1}' class='kejmin-img' alt='{$team1Name}'>";
+          } else {
+              echo "<img src='K_Images/Card_Bg.png' class='kejmin-img' alt='Fallback'>";
+          } 
+        ?> 
       </div>
-      <h3><?php echo $team2Name; ?></h3>
-      <h4> Health: </h4>
     </div>
 
-    <div class="card">
-      <img src="K_Images/Card_Bg.png" alt="Kejmin">
-      <div class="img-wrapper">
-        <?php
-    $imagePath = __DIR__ . '/K_Images/' . $image3;
-    if (is_file($imagePath)) {
-        echo "<img src='K_Images/{$image3}'> ";
-    } else {
-        // fallback placeholder if image missing
-        echo "<img src='K_Images/Card_Bg.png' alt='Kejmin'> ";} 
-    ?> 
-      </div>
-      <h3><?php echo $team3Name; ?></h3>
-      <h4> Health: </h4>
-    </div>
+    <h3><?php echo $team1Name; ?></h3>
+    <h4> Health: </h4>
   </div>
+
+  <div class="card">
+    <div class="card-image-box">
+      <img src="K_Images/Card_Bg.png" class="card-bg" alt="Background">
+      <div class="kejmin-wrapper">
+        <?php
+          $imagePath = __DIR__ . '/K_Images/' . $image2;
+          if (is_file($imagePath)) {
+              echo "<img src='K_Images/{$image2}' class='kejmin-img' alt='{$team2Name}'>";
+          } else {
+              echo "<img src='K_Images/Card_Bg.png' class='kejminr-img' alt='Fallback'>";
+          } 
+        ?> 
+      </div>
+    </div>
+
+    <h3><?php echo $team2Name; ?></h3>
+    <h4> Health: </h4>
+  </div>
+
+  <div class="card">
+    <div class="card-image-box">
+      <img src="K_Images/Card_Bg.png" class="card-bg" alt="Background">
+      <div class="kejmin-wrapper">
+        <?php
+          $imagePath = __DIR__ . '/K_Images/' . $image3;
+          if (is_file($imagePath)) {
+              echo "<img src='K_Images/{$image3}' class='kejmin-img' alt='{$team3Name}'>";
+          } else {
+              echo "<img src='K_Images/Card_Bg.png' class='kejmin-img' alt='Fallback'>";
+          } 
+        ?> 
+      </div>
+    </div>
+
+    <h3><?php echo $team3Name; ?></h3>
+    <h4> Health: </h4>
+  </div>
+
+</div>
                                                   <style>
-                                                    .kejmin{
-                                                      position: relative; 
-                                                      z-index: 10; 
-                                                      width: 180px; 
-                                                      justify-content: center;
-                                                  }
-                                                  .kejmin img {
-                                                      width: 80%;
-                                                      margin-left: 30px;
-                                                      height: auto;
-                                                      display: block;
-                                                  }
-                                                  *, *::before, *::after {
-                                                    box-sizing: border-box;
-                                                    margin: 0;
-                                                    padding: 0;
-                                                  }
+                                             *, *::before, *::after {
+                                                              box-sizing: border-border-box;
+                                                              margin: 0;
+                                                              padding: 0;
+                                                            }
 
-                                                  h1{
-                                                      text-align:center;
-                                                      color: white;
-                                                      -webkit-text-stroke: 1px black;
-                                                      font-family:Impact;
-                                                  }
-                                                  body{
-                                                      background-color: #B9A5E2;
-                                                  }
-                                                  .card-container {
-                                                  display:flex;
-                                                  /* flex-wrap:; */
-                                                  justify-content: center;
-                                                  gap:40px;    
-                                                  width: 100%;
-                                                    max-width: 1060px;
-                                                      margin: 20px auto;     
-                                                  }
+                                                            body {
+                                                              background-color: #B9A5E2;
+                                                            }
 
-                                                  .card{
-                                                  /*Set the width and height of card */
-                                                    width:300px;
-                                                    height: 500px;
-                                                    /*Set background color */
-                                                    background-color:white;
-                                                    /*Make the border and set radius */
-                                                    border: 2px solid black;
-                                                    border-radius:10px;
-                                                    padding:10px;
-                                                    text-align:center;
-                                                    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-                                                    margin-top: 40px;
-                                                    overflow:hidden;
-                                                    }
-                                                  .card img {
-                                                        width:100%;
-                                                        height: auto;
-                                                        display: block;
-                                                      border-radius: 8px;
-                                                      border: 2px solid black;
-                                                  } 
-                                                  h3{
-                                                      font-family:Impact;
-                                                      -webkit-text-stroke: 0.5px #B9A5E2;
-                                                      font-size:18px;
-                                                  }
-                                                  h4{
-                                                      font-family: monospace;
-                                                      -webkit-text-stroke: 0.5px #B9A5E2;
-                                                      font-size: 14px;
-                                                  }
+                                                            h1 {
+                                                              text-align: center;
+                                                              color: white;
+                                                              -webkit-text-stroke: 1px black;
+                                                              font-family: Impact, sans-serif;
+                                                              margin-top: 20px;
+                                                            }
 
+                                                        
+                                                            .card-container {
+                                                              display: flex;
+                                                              justify-content: center;
+                                                              gap: 40px;    
+                                                              width: 100%;
+                                                              max-width: 1060px;
+                                                              margin: 20px auto;     
+                                                            }
+
+                                                          
+                                                            .card {
+                                                              position: relative;
+                                                              width: 300px;
+                                                              height: 500px;
+                                                              background-color: white;
+                                                              border: 2px solid black;
+                                                              border-radius: 10px;
+                                                              padding: 10px;
+                                                              text-align: center;
+                                                              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                                                              overflow: hidden;
+                                                              display: flex;
+                                                              flex-direction: column;
+                                                              align-items: center;
+                                                            }
+
+                                                           
+                                                            .card-image-box {
+                                                              position: relative;
+                                                              width: 100%;
+                                                              height: 260px; 
+                                                              border-radius: 8px;
+                                                              border: 2px solid black;
+                                                              overflow: hidden;
+                                                              margin-bottom: 15px;
+                                                            }
+
+                                                        
+                                                            .card-bg {
+                                                              position: absolute;
+                                                              top: 0;
+                                                              left: 0;
+                                                              width: 100%;
+                                                              height: 100%;
+                                                              object-fit: cover; 
+                                                              z-index: 1;
+                                                            }
+
+                                                         
+                                                          
+                                                                  .kejmin-wrapper {
+                                                                    position: absolute;
+                                                                    top: 0;
+                                                                    left: 0;
+                                                                    width: 100%;
+                                                                    height: 100%;
+                                                                    z-index: 2; 
+                                                                    display: flex;
+                                                                    justify-content: center;
+                                                                    align-items: flex-end; 
+                                                                  }
+
+
+                                                                  .kejmin-img {
+                                                                    width: 80%;        
+                                                                    max-height: 70%;     
+                                                                    object-fit: contain;
+                                                                    margin-bottom: 0px;  
+                                                                    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.4));
+                                                                  }
+
+                                                            h3 {
+                                                              font-family: Impact, sans-serif;
+                                                              -webkit-text-stroke: 0.5px #B9A5E2;
+                                                              font-size: 22px;
+                                                              margin-bottom: 5px;
+                                                            }
+
+                                                            h4 {
+                                                              font-family: monospace;
+                                                              -webkit-text-stroke: 0.5px #B9A5E2;
+                                                              font-size: 16px;
+                                                            }
 
                                                       </style>
   </body>
