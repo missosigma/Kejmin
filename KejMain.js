@@ -1,4 +1,8 @@
 const canvas = document.querySelector('canvas');
+canvas.style.position = "absolute";
+canvas.style.top = "50%";
+canvas.style.left = "50%";
+canvas.style.transform = "translate(-50%, -50%)";
 const context = canvas.getContext(`2d`);
 
 const play = document.getElementById('start-btn');
@@ -123,7 +127,7 @@ function drawWorld() {
     }
     
     if(enemy1x >= 0 && enemy1x + spriteSize <= canvas.width && enemy1x >= spritex + spriteSize && spritey + spriteSize/3 >= enemy1y && spritey + spriteSize - 2 <= enemy1y + spriteSize/16*25 && Math.abs(enemy1x - spritex) <= canvas.width/3 && encountered < 1) {
-      alert('An enemy approached!');
+      alert("Let's fight!");
       encountered++;
       window.location = `encounter.php?enemyid=1`;
     }
@@ -198,7 +202,7 @@ document.addEventListener('keydown', (event) => {
       alert('The power of technology is amazing!');
     }
     if(enemy1Interactable) {
-      alert('An enemy approached!');
+      alert("Let's fight!");
       encountered++;
       window.location = `encounter.php?enemyid=1`;
     }

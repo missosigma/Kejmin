@@ -1,7 +1,6 @@
 const playerKejId = document.getElementById('team1').getAttribute('data-db');
 const urlParams = new URLSearchParams(window.location.search);
 const enemyid = urlParams.get('enemyid');
-console.log(enemyKejId);
 
 document.addEventListener('DOMContentLoaded', () => {
     const moveSelect = document.getElementById('moveSelect');
@@ -11,14 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const moveId = +button.dataset.id - 1;
         if(playerHP > 0 && enemyHP > 0) {
             if(Math.random() * 2 > 1) {
+                moving = "player";
                 moveCalc(moveId, playerKejId, enemyKejId);
                 if(enemyHP > 0) {
+                    moving = "enemy";
                     moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
                     if(playerHP <= 0) { gameOver(); }
                 } else { gameOver(); }
             } else {
+                moving = "enemy";
                 moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
                 if(playerHP > 0) {
+                    moving = "player";
                     moveCalc(moveId, playerKejId, enemyKejId);
                     if(enemyHP <= 0) { gameOver(); }
                 } else { gameOver(); }
@@ -52,6 +55,7 @@ let damage;
 let playerHP = 100;
 let enemyHP = 100;
 let movePick;
+let moving;
 
 console.log("Your", kejmin_name[playerKejId], "is up against the opponent's", kejmin_name[enemyKejId] + "!");
 
@@ -188,11 +192,11 @@ function moveCalc(movePicked, attackingId, defendingId) {
 
     damage = Math.round(move_power[movePicked][attackingId] * effective);
     console.log(kejmin_name[attackingId], "used", move_name[movePicked][attackingId], "on", kejmin_name[defendingId] + "!");
-    if(defendingId == playerKejId) {
+    if(moving == "player") {
         playerHP -= damage;
         console.log(kejmin_name[defendingId], "took", damage, "damage. It has", playerHP, "HP left.");
     }
-    if(defendingId == enemyKejId) {
+    if(moving == "enemy") {
         enemyHP -= damage;
         console.log(kejmin_name[defendingId], "took", damage, "damage. It has", enemyHP, "HP left.");
     }
