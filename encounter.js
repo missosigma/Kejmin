@@ -202,26 +202,9 @@ function moveCalc(movePicked, attackingId, defendingId) {
     }
     
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-// movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
-// moveCalc(movePick, playerKejId, enemyKejId);
 
 
-// pick the enemy name for the type // set that as base for the current encounter // 
-// let user choose move first always // after // it's random but each person can only go max two times in a row// 
-//const check health // 
-
-function fight (){
-    //to loop everyfunction during a battle 
-    
-}
->>>>>>> ae14f21 (random enemy)
-=======
 
 function gameOver() {
     window.history.back();
 }
->>>>>>> 386a3ca (Made battle end properly)
