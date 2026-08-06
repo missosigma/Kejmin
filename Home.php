@@ -46,6 +46,45 @@ if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
     <a class = "button" href = "chooseyourkejmin.php"> Possible Change Team </a> <br><br>
     <a class = "button" href = "encounter.php"> Encounter (Testing) </a><br><br>
     <a></a>
+    <p>Links</p>
+    <p>|</p>
+    <p>v</p>
+<div class="button-group">
+  <a class="button" href="navbar.php">Navbar (testing current)</a>
+  <a class="button" href="KejMain.php">Testing Game</a>
+  <a class="button" href="chooseyourkejmin.php">Possible Change Team</a>
+</div>
     
 </body>
 </html>
+
+<style>
+body{
+    Font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-image:url(https://img.magnific.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902621.jpg?semt=ais_test_b&w=740&q=80);
+    background-repeat:no-repeat;
+     background-size: cover;
+        background-position: center center;
+        background-attachment:fixed;
+}
+h1{
+    text-align:center;
+    color:black;
+    -webkit-text-stroke:0.5px white;
+    font-family:Impact;
+}
+h2{
+    text-align:center;
+    -webkit-text-stroke:0.5px white;
+    font-family:Comic Sans MS;
+}
+p{
+        text-align:center;
+    -webkit-text-stroke:0.2px white;
+    font-family:monospace;
+    font-size:20px;
+    font-weight:bold;
+}
+
+
+    </style>
