@@ -5,25 +5,29 @@ const movebar = document.getElementById('movebar');
 <script src= "attack.php"></script>
 
 moves.forEach(button => {
-  button.addEventListener('click', () => {
-    clearmovebar();
+  button.addEventListener('click', (e) => {
+     e.preventDefault();
+    checkmovebar();
   });
 });
 
-function clearmovebar() {
+function checkmovebar() {
   if (movebar) {
-    movebar.classList.add('hidden'); 
-  }
-}
+     dodamge();
 
-function pullupmovebar() {
-  if (attack) {
-    attack.addEventListener('click', (event) => {
-      event.preventDefault(); 
-      if (movebar) {
-        movebar.classList.remove('hidden'); 
-      }
-    });
   }
 }
-pullupmovebar();
+function dodamge(){
+
+}
+// function pullupmovebar() {
+//   if (attack) {
+//     attack.addEventListener('click', (event) => {
+//       event.preventDefault(); 
+//       if (movebar) {
+//         movebar.classList.remove('hidden'); 
+//       }
+//     });
+//   }
+// }
+// pullupmovebar();
