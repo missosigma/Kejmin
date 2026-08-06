@@ -1,3 +1,4 @@
+const canvas = document.querySelector('canvas');
 const context = canvas.getContext(`2d`);
 
 const play = document.getElementById('start-btn');
@@ -51,31 +52,6 @@ let spritesy = 0;
 let encountered = 0;
 let gameStart = false;
 let picked = false;
-
-// if(!picked) {
-//     let team1 = prompt('Pick a Kejmin for your team! \n[6] for Aerk, the Water Shark \n[7] for Sleaf, the Soap/Water Leaf Slug \n[8] for Sweeterie, the Sugar Bird \n[9] for Fanzo, the Metal Wolf \n[10] for Getzy, the Cotton/Sugar Unicorn');
-//     let team2 = prompt('Pick another Kejmin for your team! \n[6] for Aerk, the Water Shark \n[7] for Sleaf, the Soap/Water Leaf Slug \n[8] for Sweeterie, the Sugar Bird \n[9] for Fanzo, the Metal Wolf \n[10] for Getzy, the Cotton/Sugar Unicorn');
-//     let team3 = prompt('Pick a third Kejmin for your team! \n[6] for Aerk, the Water Shark \n[7] for Sleaf, the Soap/Water Leaf Slug \n[8] for Sweeterie, the Sugar Bird \n[9] for Fanzo, the Metal Wolf \n[10] for Getzy, the Cotton/Sugar Unicorn');
-// picked = true;
-// }
-
-// const gameData = {
-//     firstTeam: team1, secondTeam: team2, thirdTeam: team3
-// };
-// fetch('savekej.php', {
-//     method: 'POST', headers: {
-//         'Content-Type': 'application/json'
-//     }, credentials: "include", body: JSON.stringify(gameData)
-// })
-// .then(response => response.json())
-// .then(data => {
-// console.log('great,', data.message);
-// })
-// .catch((error) => {
-//     console.error('error:', error)
-// })
-
-
 
 
 function drawWorld() {
