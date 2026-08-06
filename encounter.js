@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     moveSelect.addEventListener('click', (event) => {
         const button = event.target.closest('.move');
         if (!button) return;
-        const moveId = button.dataset.id;
+        const moveId = +button.dataset.id - 1;
         const moveName = button.textContent.trim();
         console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
-        handleAttack(moveId);
+        moveCalc(moveId, playerKejId, enemyKejId);
     });
 });
 
@@ -175,7 +175,7 @@ function moveCalc(movePicked, attackingId, defendingId) {
         effective /= 1.5;
     }
 
-    damage = move_power[movePicked][attackingId] * effective;
+    damage = Math.round(move_power[movePicked][attackingId] * effective);
     if(defendingId == playerKejId) {
         playerHP -= damage;
     }
@@ -186,4 +186,3 @@ function moveCalc(movePicked, attackingId, defendingId) {
 }
 
 // movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
-// moveCalc(movePick, playerKejId, enemyKejId);

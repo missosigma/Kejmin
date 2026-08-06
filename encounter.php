@@ -126,7 +126,7 @@ $conn->close();
     <div id="enemy-bar" class="health-bar"></div>
   </div>
 </div>
-    <script src="encounter.js"></script>
+    <!-- <script src="encounter.js"></script> -->
     <!-- <script src="healthbar.js"></script> -->
 </body>
 </html>

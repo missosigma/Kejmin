@@ -148,7 +148,7 @@ button:hover {
 
    
   <nav id="movebar" class="bottom-right-nava">
-    <u id = "moveSelect">
+    <ul id = "moveSelect">
        
       <li><button  class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
       <li><button class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
@@ -157,7 +157,7 @@ button:hover {
   </nav>
   </body>
   </html>
-  <!-- <script src="encounter.js" defer></script> -->
+  <script src="encounter.js" defer></script>
 
 
 
