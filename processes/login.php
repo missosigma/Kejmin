@@ -21,7 +21,7 @@
 
   if($result->num_rows>0){
     $row = $result->fetch_all(MYSQLI_ASSOC);
-    print_r($row);
+    // print_r($row);
     // exit();
     $_SESSION["loggedIn"] = "YES";
     $_SESSION["userName"] = $row[0]["username"];
@@ -36,8 +36,17 @@
     $_SESSION["level1"] = $row[0]["level1"];  
     $_SESSION["level2"] = $row[0]["level2"];
     $_SESSION["level3"] = $row[0]["level3"];
+
     $conn->close();
-    header("location:../Home.php");
+
+    $team1 = intval($_SESSION["team1"] ?? 0);
+    $team2 = intval($_SESSION["team2"] ?? 0);
+    $team3 = intval($_SESSION["team3"] ?? 0);
+    if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
+      header("location:../chooseyourkejmin.php");
+    } else {
+      header("location:../Home.php");
+    }
   }else{
     // echo "You are not logged in.";
     $_SESSION["loggedIn"] = "NO";

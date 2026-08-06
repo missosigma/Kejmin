@@ -67,7 +67,7 @@
 <body bgcolor = #a898ce>
  <?php 
         include "back_button.php";
-        
+    session_name('MY_GAME_SESSION'); 
     session_start();
 
     if($_SESSION["loggedIn"]=="YES"){

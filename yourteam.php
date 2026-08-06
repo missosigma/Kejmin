@@ -10,6 +10,7 @@
       <?php 
           include "back_button.php";
           
+      session_name('MY_GAME_SESSION');
       session_start();
       require_once("processes/dbconfig.php");
 
@@ -77,7 +78,6 @@
       $conn->close();
       ?>
       <h1> Your Team </h1> 
-      <h3><a>Hello, <?php echo $_SESSION["userName"];?>!</a></h3>
   <div class="card-container">
     <div class="card">
       <div class="img-wrapper">
@@ -122,17 +122,17 @@
                                                   }
                                                   .card-container {
                                                   display:flex;
-                                                  flex-wrap: wrap;
+                                                  /* flex-wrap:; */
                                                   justify-content: center;
                                                   gap:40px;    
                                                   width: 100%;
-                                                    max-width: 360px;
+                                                    max-width: 1060px;
                                                       margin: 20px auto;     
                                                   }
 
                                                   .card {
-                                                    width: calc(50% - 20px);    
-                                                    flex-basis: calc(50% - 20px); 
+                                                    width: calc(70% - 20px);    
+                                                    flex-basis: calc(70% - 20px); 
                                                     aspect-ratio: 1 / 1; 
                                                     background-color: white;
                                                     border-radius:10px;

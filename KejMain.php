@@ -1,16 +1,13 @@
-<html lang="en">
 <?php
-        include "navbar.php";
- 
-if($_SESSION["loggedIn"]=="YES"){
 
-}else{
-    // echo "You are a scammer.";
+include "navbar.php";
+
+if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES") {
     header("location:index.php");
     exit;
 }
-
 ?>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

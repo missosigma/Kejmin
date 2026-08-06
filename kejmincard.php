@@ -14,12 +14,15 @@ $id = $_GET["id"];
 echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
 
     $rows = $result->fetch_all(MYSQLI_ASSOC);
-     for($i=0;$i<count($rows);$i++){
-      $name = $rows[$i]["kejmin_name"];
-      $id = $rows[$i]["kejmin_id"];
-      $desc = $rows[$i]["kejdesc"];
-      $image = $name.".png";
-    }
+         for($i=0;$i<count($rows);$i++){
+            $name = $rows[$i]["kejmin_name"];
+            $id = $rows[$i]["kejmin_id"];
+            $desc = $rows[$i]["kejdesc"];
+            // sanitize and normalize image filename (remove special chars/spaces)
+            $cleanName = trim($name);
+            $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+            $image = str_replace(' ', '', $cleanName) . '.png';
+        }
   echo "<br>";
 echo "</div>";
 $conn->close();
@@ -40,10 +43,14 @@ $conn->close();
 <img src= "K_Images/Card_Bg.png" class="background">
  <div class ="kejmin">
  <?php
-    if(is_file("K_Images/{$image}")){
-    echo "<img src='K_Images/{$image}'> ";
-                }
-            ?>
+    $imagePath = __DIR__ . '/K_Images/' . $image;
+    if (is_file($imagePath)) {
+        echo "<img src='K_Images/{$image}'> ";
+    } else {
+        // fallback placeholder if image missing
+        echo "<img src='K_Images/Card_Bg.png' alt='placeholder'> ";
+    }
+?>
     </div>
 </div>
 <h3> <?php echo $name; ?> </h3>
@@ -120,6 +127,7 @@ position: relative;
 }
 .kejmin img {
     width: 80%;
+    margin-left: 30px;
     height: auto;
     display: block;
 }

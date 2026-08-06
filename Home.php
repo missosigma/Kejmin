@@ -1,13 +1,19 @@
 <?php
+
         include "navbar.php";
  
 
 
-if($_SESSION["loggedIn"]=="YES"){
-
-}else{
-    // echo "You are a scammer.";
+if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES"){
     header("location:index.php");
+    exit;
+}
+
+$team1 = intval($_SESSION["team1"] ?? 0);
+$team2 = intval($_SESSION["team2"] ?? 0);
+$team3 = intval($_SESSION["team3"] ?? 0);
+if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
+    header("location:chooseyourkejmin.php");
     exit;
 }
 
@@ -37,6 +43,7 @@ if($_SESSION["loggedIn"]=="YES"){
     <text>Links vvvvv</text></br></br>
     <a class = "button" href = "navbar.php"> Navbar (testing current)</a> </Br></br>
     <a class = "button" href = "KejMain.php"> Testing Game </a> </Br></br>
+    <a class = "button" href = "chooseyourkejmin.php"> Possible Change Team </a> <br><br>
     <a></a>
     
 </body>
