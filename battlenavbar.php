@@ -134,11 +134,12 @@ li a{
     <h3>Your Health:</h3> 
 </div>
     <div class="health-container">
-    <div class="health-bar"></div> 
+    <div id="player-bar" class="health-bar"></div> 
 </div>
   </nav> 
 </footer> 
 <script src="Battle Navbar Files/attackbar.js"></script>
+<script src="healthbar.js"></script>
 <?PHP
 include "Battle Navbar Files/attack.php"
 ?>

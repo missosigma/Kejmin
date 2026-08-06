@@ -119,11 +119,11 @@ $conn->close();
 <div class="enemy-health-box">
   <h3>Enemy Health:</h3>
   <div class="health-container">
-    <div class="health-bar"></div>
+    <div id="enemy-bar" class="health-bar"></div>
   </div>
 </div>
-    <script src="encounter.js">
-    </script>
+    <script src="encounter.js"></script>
+    <script src="healthbar.js"></script>
 </body>
 </html>
 <style>
