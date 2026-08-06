@@ -1,7 +1,7 @@
 <?php
 session_name('MY_GAME_SESSION');
 session_start();
-require_once "processes/dbconfig.php";
+require_once "dbconfig.php";
 
 if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES") {
     header("location:index.php");
