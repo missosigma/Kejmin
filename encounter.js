@@ -1,11 +1,7 @@
 const playerKejId = document.getElementById('team1').getAttribute('data-db');
 const urlParams = new URLSearchParams(window.location.search);
 const enemyid = urlParams.get('enemyid');
-let enemyKejId = 10
-// switch (enemyid) {
-//     case "1":
-//         enemyKejId = 10;
-// }
+console.log(enemyKejId);
 
 document.addEventListener('DOMContentLoaded', () => {
     const moveSelect = document.getElementById('moveSelect');

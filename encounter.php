@@ -41,7 +41,11 @@ if ($randomNumber === 9){
 if ($randomNumber === 10){
     $enemyImage = "Getzy.gif";
 } 
-
+?>
+<script>
+    const enemyKejId = <?php echo json_encode($randomNumber); ?>
+</script>
+<?php
 $user = null;
 $team1 = null;
 $team2 = null;
