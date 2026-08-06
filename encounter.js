@@ -1,11 +1,7 @@
 const playerKejId = document.getElementById('team1').getAttribute('data-db');
 const urlParams = new URLSearchParams(window.location.search);
 const enemyid = urlParams.get('enemyid');
-let enemyKejId = 10
-// switch (enemyid) {
-//     case "1":
-//         enemyKejId = 10;
-// }
+console.log(enemyKejId);
 
 document.addEventListener('DOMContentLoaded', () => {
     const moveSelect = document.getElementById('moveSelect');
@@ -13,16 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const button = event.target.closest('.move');
         if (!button) return;
         const moveId = +button.dataset.id - 1;
-        const moveName = button.textContent.trim();
-        console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
-        
-        if(Math.random() * 2 > 1) {
-            moveCalc(moveId, playerKejId, enemyKejId);
-            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-        } else {
-            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-            moveCalc(moveId, playerKejId, enemyKejId);
-        }
+        if(playerHP > 0 && enemyHP > 0) {
+            if(Math.random() * 2 > 1) {
+                moveCalc(moveId, playerKejId, enemyKejId);
+                if(enemyHP > 0) {
+                    moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                    if(playerHP <= 0) { gameOver(); }
+                } else { gameOver(); }
+            } else {
+                moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                if(playerHP > 0) {
+                    moveCalc(moveId, playerKejId, enemyKejId);
+                    if(enemyHP <= 0) { gameOver(); }
+                } else { gameOver(); }
+            }
+        } else { gameOver(); }
     });
 });
 
@@ -198,15 +199,8 @@ function moveCalc(movePicked, attackingId, defendingId) {
     
 }
 
-// movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
-// moveCalc(movePick, playerKejId, enemyKejId);
 
 
-// pick the enemy name for the type // set that as base for the current encounter // 
-// let user choose move first always // after // it's random but each person can only go max two times in a row// 
-//const check health // 
-
-function fight (){
-    //to loop everyfunction during a battle 
-    
+function gameOver() {
+    window.history.back();
 }
