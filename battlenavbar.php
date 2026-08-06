@@ -114,10 +114,11 @@ li a{
   margin:0;
   padding:0;
   border: 2px solid #B9A5E2;
+    transition: width 0.3s ease;
 }
-h3{
+.health h3{
     -webkit-text-stroke:0.5px #B9A5E2;
-    font-family:Impact;
+    font-family:Comic Sans MS;
 }
 </style>
 
@@ -129,8 +130,9 @@ h3{
       <li><a href="../Battle Navbar Files/chart.php">Element Chart</a></li> 
       <!-- <li><a href="../Battle Navbar Files/attack.php">Attack</a></li>  -->
     </ul> 
-    
+    <div class="health">
     <h3>Your Health:</h3> 
+</div>
     <div class="health-container">
     <div class="health-bar"></div> 
 </div>

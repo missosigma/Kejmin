@@ -116,7 +116,55 @@ $conn->close();
     <div id="team1" data-db="<?php echo htmlspecialchars($team1, ENT_QUOTES, 'UTF-8'); ?>"></div>
     <div id="team2" data-db="<?php echo htmlspecialchars($team2, ENT_QUOTES, 'UTF-8'); ?>"></div>
     <div id="team3" data-db="<?php echo htmlspecialchars($team3, ENT_QUOTES, 'UTF-8'); ?>"></div>
+<div class="enemy-health-box">
+  <h3>Enemy Health:</h3>
+  <div class="health-container">
+    <div class="health-bar"></div>
+  </div>
+</div>
     <script src="encounter.js">
     </script>
 </body>
 </html>
+<style>
+ .enemy-health-box {
+  position: fixed;
+  top: 15px;      
+  left: 20px;         
+  z-index: 999;       
+  background: black; 
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 250px;       
+  box-sizing: border-box;
+}
+
+.enemy-health-box h3 {
+  margin: 0 0 8px 0;  
+  font-family: Comic Sans MS;
+  font-size: 16px;
+  -webkit-text-stroke: 0.5px #B9A5E2;
+  letter-spacing: 1px;
+  color:white;
+}
+
+.health-container {
+  background-color: black; 
+  width: 100%;
+  height: 16px;          
+  border: 2px solid #B9A5E2;
+  border-radius: 4px;
+  overflow: hidden;     
+  box-sizing: border-box;
+}
+
+
+.health-bar {
+  width: 100%;         
+  height: 100%;
+  background-color: #88E788;
+  transition: width 0.3s ease; 
+
+}
+
+    </style>
