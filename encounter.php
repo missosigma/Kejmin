@@ -127,7 +127,7 @@ $conn->close();
   </div>
 </div>
     <script src="encounter.js"></script>
-    <script src="healthbar.js"></script>
+    <!-- <script src="healthbar.js"></script> -->
 </body>
 </html>
 <style>

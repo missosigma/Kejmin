@@ -157,7 +157,7 @@ button:hover {
   </nav>
   </body>
   </html>
-  <script src="encounter.js" defer></script>
+  <!-- <script src="encounter.js" defer></script> -->
 
 
 
