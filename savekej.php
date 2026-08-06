@@ -4,7 +4,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 session_name('MY_GAME_SESSION'); 
 session_start();
-require_once 'processes/dbconfig.php';
+require_once 'dbconfig.php';
 
 
 $team1 = intval($_POST['firstTeam'] ?? 0);

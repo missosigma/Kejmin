@@ -4,7 +4,7 @@
   $user = $_POST["username"];
   $pass = $_POST["password"];
   //load dbconfig
-  require_once("dbconfig.php");
+  require_once("../dbconfig.php");
   //connect to database
   $conn = new mysqli($servername, $username, $password, $database);
   if($conn->connect_error) {

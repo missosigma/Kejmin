@@ -1,6 +1,6 @@
 
 <?php
-require_once("processes/dbconfig.php");
+require_once("dbconfig.php");
 
 $id = $_GET["id"];
   $conn = new mysqli($servername, $username, $password, $database);

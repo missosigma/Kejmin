@@ -1,5 +1,5 @@
 <?php 
-require_once("dbconfig.php");
+require_once("../dbconfig.php");
 $user = $_POST["username"];
 $pass = $_POST["password"];
 $age = $_POST["age"];

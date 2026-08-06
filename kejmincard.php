@@ -1,5 +1,5 @@
 <?php
-require_once("processes/dbconfig.php");
+require_once("dbconfig.php");
 include "back_button.php";
 
 $id = $_GET["id"];
