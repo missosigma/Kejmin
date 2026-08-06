@@ -2,8 +2,8 @@ const canvas = document.querySelector('canvas');
 const c = canvas.getContext('2d');
 // console.log(battleZonesData);
 
-// canvas.width = 1024;
-// canvas.height = 576;
+canvas.width = 1024;
+canvas.height = 576;
 
 // const collisionsMap = [];
 // for (let i = 0; i < collisions.length; i+= 60) {
@@ -69,7 +69,7 @@ image.onload = () => {
 //     image: foregroundImage
 // })
 
-// const movables = [background, ...boundaries, foreground, ...battleZones];
+// const movables = [...boundaries];
 
 // function rectangularCollision({ rectangle1, rectangle2 }) {
 //     return (
@@ -82,13 +82,13 @@ image.onload = () => {
 
 function animate() {
     window.requestAnimationFrame(animate);
-    background.draw();
-    boundaries.forEach((boundary) => {
-        boundary.draw();
-    })
-    battleZones.forEach((battleZone) => {
-        battleZone.draw();
-    })
-    player.draw();
-    foreground.draw();
+    // background.draw();
+    // boundaries.forEach((boundary) => {
+    //     boundary.draw();
+    // })
+    // battleZones.forEach((battleZone) => {
+    //     battleZone.draw();
+    // })
+    // player.draw();
+    // foreground.draw();
 }
