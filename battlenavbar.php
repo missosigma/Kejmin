@@ -46,7 +46,6 @@
 <?PHP
 include "Battle Navbar Files/attack.php"
 ?>
-<script src="Battle Navbar Files/attackbar.js"></script>
 
 
 <style>
@@ -143,7 +142,6 @@ li a{
 </div>
   </nav> 
 </footer> 
-<script src="Battle Navbar Files/attackbar.js"></script>
 <script src="healthbar.js"></script>
 <?PHP
 include "Battle Navbar Files/attack.php"

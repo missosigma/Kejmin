@@ -7,21 +7,17 @@ switch (enemyid) {
         enemyKejId = 10;
 }
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const moveSelect = document.getElementById('moveSelect');
-//     moveSelect.addEventListener('click', (event) => {
-//         const button = event.target.closest('.move');
-//         if (!button) return;
-//         const moveId = button.dataset.id;
-//         const moveName = button.textContent.trim();
-
-//         // Use the data
-//         console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
-        
-//         // Call your game or attack logic here
-//         handleAttack(moveId);
-//     });
-// });
+document.addEventListener('DOMContentLoaded', () => {
+    const moveSelect = document.getElementById('moveSelect');
+    moveSelect.addEventListener('click', (event) => {
+        const button = event.target.closest('.move');
+        if (!button) return;
+        const moveId = button.dataset.id;
+        const moveName = button.textContent.trim();
+        console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
+        handleAttack(moveId);
+    });
+});
 
 
 let effective = 1;
@@ -190,4 +186,4 @@ function moveCalc(movePicked, attackingId, defendingId) {
 }
 
 // movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
-moveCalc(movePick, playerKejId, enemyKejId);
+// moveCalc(movePick, playerKejId, enemyKejId);
