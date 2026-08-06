@@ -40,11 +40,6 @@ if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
     <h1>Welcome to the Kejmin starting page.</h1>
     <h2>(In development.)</h2>
     <h2>Turn your volume down we have noise!!</h2>
-    <text>Links vvvvv</text></br></br>
-    <a class = "button" href = "navbar.php"> Navbar (testing current)</a> </Br></br>
-    <a class = "button" href = "KejMain.php"> Testing Game </a> </Br></br>
-    <a class = "button" href = "chooseyourkejmin.php"> Possible Change Team </a> <br><br>
-    <a class = "button" href = "encounter.php"> Encounter (Testing) </a><br><br>
     <a></a>
     <p>Links</p>
     <p>|</p>
@@ -53,6 +48,7 @@ if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
   <a class="button" href="navbar.php">Navbar (testing current)</a>
   <a class="button" href="KejMain.php">Testing Game</a>
   <a class="button" href="chooseyourkejmin.php">Possible Change Team</a>
+  <a class = "button" href = "encounter.php"> Encounter (Testing) </a>
 </div>
     
 </body>
