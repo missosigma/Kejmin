@@ -1,37 +1,42 @@
 class Sprite {
-    constructor({ position, velocity, image, frames = {max: 1} }){ 
+    constructor({ position, velocity, image, frames = {max: 1}, sprites }){ 
         this.position = position;
         this.image = image;
-        this.frames = frames;
+        this.frames = {...frames, val: 0, elasped: 0};
 
         this.image.onload = () => {
             this.width = this.image.width / this.frames.max;
             this.height = this.image.height;
         }
+        this.moving = false; 
+        this.sprites = sprites;
         
     }
 
     draw() {
-        // c.drawImage(this.image, this.position.x, this.position.y);
-
-        const newWidth = playerImage.width * 0.05;
-        const newHeight = playerImage.height * 0.1;
-        
         c.drawImage(
         this.image, 
-        0,
+        this.frames.val * this.width,
         0,
         this.image.width / this.frames.max,
         this.image.height,
         this.position.x,
         this.position.y,
-
-        // canvas.width / 4 - newWidth / 20, 
-        // canvas.height / 2 - newHeight / 2, newWidth, newHeight,
-
         this.image.width / this.frames.max,
         this.image.height
         );
+
+        if (this.moving) return;
+
+        if (this.frames.max > 1) {
+            this.frames.elasped++;
+        }
+
+        if (this.frames.elasped % 10 === 0) {
+        if (this.frames.val < this.frames.max - 1) this.frames.val++;
+        else this.frames.val = 0;
+        }
+        
     }
 } 
 
