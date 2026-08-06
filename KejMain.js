@@ -198,13 +198,9 @@ document.addEventListener('keydown', (event) => {
       alert('The power of technology is amazing!');
     }
     if(enemy1Interactable) {
-      if(encountered < 1) {
-        alert('An enemy approached!');
-        encountered++;
-        window.location = `encounter.php?enemyid=1`;
-      } else {
-        alert('Good fight!');
-      }
+      alert('An enemy approached!');
+      encountered++;
+      window.location = `encounter.php?enemyid=1`;
     }
   }
   if (event.key === 's' || event.key === 'ArrowDown') {
