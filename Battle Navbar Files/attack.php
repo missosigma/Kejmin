@@ -12,7 +12,7 @@ and the opponent's health lowers.
   <style>
     .bottom-right-nava {
       position: fixed;
-      bottom: 100px;
+      bottom: 140px;
       right: 100px;
       display: flex !important;
       flex-direction: row !important;

@@ -1,5 +1,5 @@
 const moves = document.querySelectorAll('.move'); 
-const attack = document.querySelector('.attack a');
+const attack = document.querySelector('.attack');
 const movebar = document.getElementById('movebar');
 
 moves.forEach(button => {

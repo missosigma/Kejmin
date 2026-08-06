@@ -1,12 +1,12 @@
 <style>
 .bottom-right-nav{
     position:fixed;
-    bottom:20px;
+    bottom:0px;
     right:20px;
     z-index:1000;
     border: 1px solid black;
     background-color: black;
-    padding: 2px;
+    padding: 10px;
   
 } 
 
@@ -15,7 +15,11 @@
     color: white;
     -webkit-text-stroke: 1px black;
 }
-
+.bottom-right-nav h3 {
+  color: white;
+  margin: 10px 0 5px 0; 
+  font-family: sans-serif;
+}
 
 
 ul{
@@ -48,8 +52,29 @@ li a{
 .hidden {
   display: none !important;
 }
+.heatlh-container{
+    margin top:15px;
+    clear:both;
+}
+.health-container h3 {
+  color: white;
+  margin: 0 0 5px 0;
+} 
 
+.health-bar{
+    width: 100%;
+  height: 10px;
+  background-color: #88E788;
+  margin:0;
+  padding:0;
+  border: 2px solid #B9A5E2;
+}
+h3{
+    -webkit-text-stroke:0.5px #B9A5E2;
+    font-family:Impact;
+}
 </style>
+<<<<<<< HEAD
 <footer>
     <nav class = "bottom-right-nav">
     <ul>
@@ -60,4 +85,21 @@ li a{
     </ul>
    </nav>
 </footer>
+=======
+<footer> 
+  <nav class="bottom-right-nav"> 
+    <ul> 
+      <li><a onclick="history.back()">Run</a></li> 
+      <li><a href="../Battle Navbar Files/capture.php">Capture</a></li> 
+      <li><a href="../Battle Navbar Files/chart.php">Element Chart</a></li> 
+      <li><a href="../Battle Navbar Files/attack.php">Attack</a></li> 
+    </ul> 
+    
+    <h3>Your Health:</h3> 
+    <div class="health-container">
+    <div class="health-bar"></div> 
+</div>
+  </nav> 
+</footer> 
+>>>>>>> 23ad01a (Added a Health bar to battle navbar)
 <script src="Battle Navbar Files/attackbar.js"></script>
