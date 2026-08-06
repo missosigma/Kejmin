@@ -83,86 +83,88 @@
 ?>
 
 
-
-<script>
-function move1 {
-  document.getElementById("hi").innerHTML = "Hello World";
-  console.log("Yo")
-}
-
-function move2 {
-  document.getElementById("hi").innerHTML = "Hello";
-  console.log("Yo2")
-}
-
-function move3 {
-  document.getElementById("hi").innerHTML = "World";
-  console.log("Yo3")
-}
-
-</script>
-
-
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    .bottom-right-nava {
-      position: fixed;
-      bottom: 140px;
-      right: 5px;
-      display: flex !important;
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      gap: 10px;
-      border: 2px solid black;
-    }
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #B9A5E2;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    .bottom-right-nava button {
-      white-space: nowrap !important;
-      width: auto !important;
-      margin: 0 !important;
-    }
-    button {
-      background-color: #B9A5E2;
-      color: white;
-      font-family: Impact;
-      -webkit-text-stroke: 0.5px black;
-      font-size: 16px;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-    }
-    .bottom-right-nava button:hover {
-      background-color: #8265c6;
-    }
-    .hidden {
-  display: none !important;
+<head> 
+  <style> 
+.bottom-right-nava { 
+   position: fixed !important; 
+    bottom: 140px !important;      
+    right: 0 !important;       
+    display: flex !important; 
+    flex-direction: row !important; 
+    flex-wrap: nowrap !important; 
+    gap: 0px;                  
+    border: 2px solid black; 
+    border-bottom: none;       
+    border-right: none;        
+    z-index: 999999 !important; 
+    background-color: #B9A5E2;
+    margin: 0 !important;      
+    padding: 0 !important;
+} 
+/* Strips out the default browser padding and spacing lists use */
+.bottom-right-nava ul { 
+    display: flex;
+    flex-direction: row;
+    list-style-type: none; 
+    margin: 0 !important; 
+    padding: 0 !important; 
+    overflow: hidden; 
+    background-color: #B9A5E2; 
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
 }
-  </style>
+
+.bottom-right-nava li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Adjusts the buttons to align flush together in the corner */
+button { 
+    background-color: #B9A5E2; 
+    color: white; 
+    font-family: Impact, sans-serif; 
+    -webkit-text-stroke: 0.5px black; 
+    font-size: 18px;            /* Clear text sizing */
+    padding: 16px 24px;         /* Uniform gaming button area */
+    margin: 0 !important;       /* Eliminates gaps between button frames */
+    border: none; 
+    cursor: pointer; 
+    white-space: nowrap !important; 
+    width: auto !important; 
+    position: relative;
+    z-index: 1000000;           /* Secures input priority over other layouts */
+    border-left: 1px solid rgba(0, 0, 0, 0.2); /* Soft separator between internal options */
+}
+
+button:hover { 
+    background-color: #8265c6 !important; 
+}
+</style>
 </head>
 <body>
 
    
   <nav id="movebar" class="bottom-right-nava">
     <ul>
-       <p id = "hi"></p>
-      <li><button onclick="move1()" class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
-      <li><button onclick="move2()" class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
-      <li><button onclick="move3()" class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
+       
+      <li><button  class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
+      <li><button class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
+      <li><button class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
     </ul>
   </nav>
+<<<<<<< HEAD
   <script src="attackbar.js"></script>
 </body>
 </html>
+=======
+  </body>
+  </html>
+  <script src="encounter.js" defer></script>
+
+
+
+>>>>>>> 70d6191 (Fixed Movebar)
 
 

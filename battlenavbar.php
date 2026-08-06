@@ -53,7 +53,7 @@ include "Battle Navbar Files/attack.php"
 .bottom-right-nav{
     position:fixed;
     bottom:0px;
-    right:20px;
+    right:50px;
     z-index:1000;
     border: 1px solid black;
     background-color: black;
