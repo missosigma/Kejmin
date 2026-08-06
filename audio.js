@@ -1,40 +1,44 @@
-//music oh yeahh
+//audio unlock helper for any user interaction and back-navigation resumes
+const bgmusic = document.getElementById('bg-music');
+const battlemusic = document.getElementById('battle-music');
+let audioUnlocked = false;
 
+function playAudioIfReady(audio) {
+  if (!audio) {
+    return;
+  }
+  if (audio.paused) {
+    audio.play().catch(error => {
+      console.log('Audio play blocked or unavailable:', error);
+    });
+  }
+}
 
- 
-const bgmusic = document.getElementById("bg-music");
- document.addEventListener('click', () => {
-    if(bgmusic.paused) {
-      bgmusic.play().catch(error => console.log("blocked suckka",error));}
-    }, {once: true});
+function unlockAudio() {
+  if (audioUnlocked) {
+    return;
+  }
+  audioUnlocked = true;
 
-  window.addEventListener('pageshow', (event) => {
-      const audio = document.getElementById('bg-music'); 
-      if (event.persisted && audio) {
-          audio.play().catch((error) => {
-              console.log("Autoplay was prevented", error);
-          });
-      }
-  });
- const battlemusic = document.getElementById("battle-music");
-  document.addEventListener('click', () => {
-    if(battlemusic.paused) {
-      battlemusic.play().catch(error => console.log("blocked suckka",error));}
-    }, {once: true});
+  playAudioIfReady(bgmusic);
+  playAudioIfReady(battlemusic);
+}
 
-  window.addEventListener('pageshow', (event) => {
-      const audio = document.getElementById('battle-music'); 
-      if (event.persisted && audio) {
-          audio.play().catch((error) => {
-              console.log("Autoplay was prevented", error);
-          });
-      }
-  });
+const unlockEvents = ['click', 'keydown', 'touchstart', 'pointerdown'];
+unlockEvents.forEach(eventName => {
+  document.addEventListener(eventName, unlockAudio, { once: true, passive: true });
+});
 
-// function playMusic() {
-//   bgmusic.play().catch(error => console.log("blocked suckka",error));
-// }
+window.addEventListener('pageshow', event => {
+  if (event.persisted || audioUnlocked) {
+    playAudioIfReady(bgmusic);
+    playAudioIfReady(battlemusic);
+  }
+});
 
-// function playBattleMusic() {
-//   battlemusic.play().catch(error => console.log("blocked suckka",error));
-// }
+window.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && audioUnlocked) {
+    playAudioIfReady(bgmusic);
+    playAudioIfReady(battlemusic);
+  }
+});

@@ -35,6 +35,7 @@ try {
         <h1>Choose Your Three Kejmin</h1>
         <form id="chooseForm" method="post" action="savekej.php">
             <div class="row">
+
                 <div class="field">
                     <label for="firstTeam">First Kejmin</label>
                     <select id="firstTeam" name="firstTeam">
@@ -44,6 +45,7 @@ try {
                         <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="field">
                     <label for="secondTeam">Second Kejmin</label>
                     <select id="secondTeam" name="secondTeam">
@@ -53,6 +55,7 @@ try {
                         <?php endforeach; ?>
                     </select>
                 </div>
+
                 <div class="field">
                     <label for="thirdTeam">Third Kejmin</label>
                     <select id="thirdTeam" name="thirdTeam">
@@ -62,14 +65,24 @@ try {
                         <?php endforeach; ?>
                     </select>
                 </div>
+
             </div>
+
             <div class="actions">
                 <button id="saveTeam" type="submit">Save Team</button>
                 <button id="cancel" type="button" onclick="history.back()">Cancel</button>
             </div>
+
             <div class="note">After saving, you will be redirected to Home.</div>
+
         </form>
     </div>
+
+
+
+
+
+
     <script>
         async function checkTeamSave(event) {
             event.preventDefault();
@@ -114,6 +127,10 @@ try {
     </script>
 </body>
 </html>
+
+
+
+
 
 
 <style>
