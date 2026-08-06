@@ -46,6 +46,7 @@ let movePick;
 console.log("Your", kejmin_name[playerKejId], "is up against the opponent's", kejmin_name[enemyKejId] + "!");
 
 function moveCalc(movePicked, attackingId, defendingId) {
+    effective = 1;
     if(
             (move_type[movePicked][attackingId] == types[1] && (
                 kejmin_type1[defendingId] == types[2] || kejmin_type1[defendingId] == types[3] || kejmin_type1[defendingId] == types[6]
