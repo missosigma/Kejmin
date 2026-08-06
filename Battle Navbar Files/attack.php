@@ -140,11 +140,26 @@
  
   <nav id="movebar" class="bottom-right-nava">
     <ul>
-      <li><button class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
-      <li><button class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
-      <li><button class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
+      <li><button onclick="move1()" class="move" data-id="1"> <?php echo $attackname11; ?> </button></li>
+      <li><button onclick="move2()" class="move" data-id="2"> <?php echo $attackname12; ?> </button></li>
+      <li><button onclick="move3()" class="move" data-id="3"> <?php echo $attackname13; ?> </button></li>
     </ul>
   </nav>
   <script src="attackbar.js"></script>
 </body>
 </html>
+
+<script>
+function move1 {
+  
+}
+function move2 {
+
+}
+function move3 {
+
+}
+
+
+
+</script>
