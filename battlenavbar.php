@@ -126,8 +126,8 @@ li a{
   <nav class="bottom-right-nav"> 
     <ul> 
       <li><a onclick="history.back()">Run</a></li> 
-      <li><a href="../Battle Navbar Files/capture.php">Capture</a></li> 
-      <li><a href="../Battle Navbar Files/chart.php">Element Chart</a></li> 
+      <!-- <li><a href="../Battle Navbar Files/capture.php">Capture</a></li>  -->
+      <li><a href="Battle Navbar Files/chart.php">Element Chart</a></li> 
       <!-- <li><a href="../Battle Navbar Files/attack.php">Attack</a></li>  -->
     </ul> 
     <div class="health">
