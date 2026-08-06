@@ -95,7 +95,7 @@
     .bottom-right-nava {
       position: fixed;
       bottom: 140px;
-      right: 100px;
+      right: 5px;
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: nowrap !important;
