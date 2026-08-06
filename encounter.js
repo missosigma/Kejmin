@@ -15,7 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const moveId = +button.dataset.id - 1;
         const moveName = button.textContent.trim();
         console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
-        moveCalc(moveId, playerKejId, enemyKejId);
+        
+        if(Math.random() * 2 > 1) {
+            moveCalc(moveId, playerKejId, enemyKejId);
+            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+        } else {
+            moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+            moveCalc(moveId, playerKejId, enemyKejId);
+        }
     });
 });
 
@@ -23,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 let effective = 1;
 let types = ["Neutral", "Water", "Soap", "Sugar", "Cotton", "Metal", "Paper", "Bamboo"]
 let kejmin_name = [, , , , , , "Aerk", "Sleef", "Sweeterie", "Fanzo", "Getzy"];
-let move1 = [, , , , , , "Bubble Pop", "Water Blast", "Sugar Rush", "Blunt Force Trauma", "Sugar Crash"];
-let move2 = [, , , , , , "Brute Force", "Quick Strike", "Quick Strike", "Rusty Swipe", "Cotton Squeeze"];
-let move3 = [, , , , , , "Water Blast", "Drown", "Sugar Punch", "Brute Force", "Quick Strike"];
+let move_name = [
+            [, , , , , , "Bubble Pop", "Water Blast", "Sugar Rush", "Blunt Force Trauma", "Sugar Crash"],
+            [, , , , , , "Brute Force", "Quick Strike", "Quick Strike", "Rusty Swipe", "Cotton Squeeze"],
+            [, , , , , , "Water Blast", "Drown", "Sugar Punch", "Brute Force", "Quick Strike"]
+                ];
 let kejmin_type1 = [, , , , , , types[1], types[2], types[3], types[5], types[4]];
 let kejmin_type2 = [, , , , , , types[1], types[0], types[0], types[0], types[3]];
 let move_type = [
@@ -177,13 +186,14 @@ function moveCalc(movePicked, attackingId, defendingId) {
     }
 
     damage = Math.round(move_power[movePicked][attackingId] * effective);
+    console.log(kejmin_name[attackingId], "used", move_name[movePicked][attackingId], "on", kejmin_name[defendingId] + "!");
     if(defendingId == playerKejId) {
         playerHP -= damage;
+        console.log(kejmin_name[defendingId], "took", damage, "damage. It has", playerHP, "HP left.");
     }
     if(defendingId == enemyKejId) {
         enemyHP -= damage;
+        console.log(kejmin_name[defendingId], "took", damage, "damage. It has", enemyHP, "HP left.");
     }
-    console.log(damage, enemyHP, playerHP);
+    
 }
-
-// movePick = prompt(`Choose a move! \n[0] for ${move1[playerKejId]} \n[1] for ${move2[playerKejId]} \n[2] for ${move3[playerKejId]}`)
