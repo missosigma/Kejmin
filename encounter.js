@@ -7,6 +7,23 @@ switch (enemyid) {
         enemyKejId = 10;
 }
 
+// document.addEventListener('DOMContentLoaded', () => {
+//     const moveSelect = document.getElementById('moveSelect');
+//     moveSelect.addEventListener('click', (event) => {
+//         const button = event.target.closest('.move');
+//         if (!button) return;
+//         const moveId = button.dataset.id;
+//         const moveName = button.textContent.trim();
+
+//         // Use the data
+//         console.log(`Button pressed! ID: ${moveId}, Name: ${moveName}`);
+        
+//         // Call your game or attack logic here
+//         handleAttack(moveId);
+//     });
+// });
+
+
 let effective = 1;
 let types = ["Neutral", "Water", "Soap", "Sugar", "Cotton", "Metal", "Paper", "Bamboo"]
 let kejmin_name = [, , , , , , "Aerk", "Sleef", "Sweeterie", "Fanzo", "Getzy"];
