@@ -8,8 +8,8 @@ require_once 'processes/dbconfig.php';
 
 
 $team1 = intval($_POST['firstTeam'] ?? 0);
-$team2 = intval($_POST['secondTeam'] ?? 0);
-$team3 = intval($_POST['thirdTeam'] ?? 0);
+$team2 = 0;
+$team3 = 0;
 
 $inputData = [];
 $contentType = $_SERVER['CONTENT_TYPE'] ?? $_SERVER['HTTP_CONTENT_TYPE'] ?? '';
@@ -24,31 +24,22 @@ if (stripos($contentType, 'application/json') !== false) {
 if (!$team1 && isset($inputData['firstTeam'])) {
     $team1 = intval($inputData['firstTeam']);
 }
-if (!$team2 && isset($inputData['secondTeam'])) {
-    $team2 = intval($inputData['secondTeam']);
-}
-if (!$team3 && isset($inputData['thirdTeam'])) {
-    $team3 = intval($inputData['thirdTeam']);
-}
 
 $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
 
-if ($team1 && $team2 && $team3) {
-
+if ($team1) {
     try {
-        $sql = "update users set team1 = {$team1}, team2 = {$team2}, team3 = {$team3} where id = {$_SESSION['id']}";
-
+        $sql = "UPDATE users SET team1 = ?, team2 = 0, team3 = 0 WHERE id = ?";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        $stmt->execute([$team1, $_SESSION['id']]);
 
-        // Update the session immediately so Home sees the selected team without extra refresh.
         $_SESSION['team1'] = $team1;
-        $_SESSION['team2'] = $team2;
-        $_SESSION['team3'] = $team3;
+        $_SESSION['team2'] = 0;
+        $_SESSION['team3'] = 0;
 
         if ($isAjax) {
             header('Content-Type: application/json');
-            echo json_encode(['status' => 'success', 'message' => 'Team saved.', 'team1' => $team1, 'team2' => $team2, 'team3' => $team3]);
+            echo json_encode(['status' => 'success', 'message' => 'Kejmin saved.', 'team1' => $team1]);
             exit;
         }
 
@@ -66,5 +57,15 @@ if ($team1 && $team2 && $team3) {
         echo 'Database error.';
         exit;
     }
-} 
+}
+
+if ($isAjax) {
+    header('Content-Type: application/json');
+    http_response_code(400);
+    echo json_encode(['status' => 'error', 'message' => 'Please choose a Kejmin.']);
+    exit;
+}
+
+header('Location: chooseyourkejmin.php');
+exit;
 ?>

@@ -1,4 +1,4 @@
-(
+
 <!-- <?php include "../battlenavbar.php" ?> -->
  <?php
 
@@ -33,6 +33,7 @@
       $team2 = $row[0]['team2'];
       $team3 = $row[0]['team3'];
 // kejmin 1 help me ... ahhhhhhrhrhrhrh///////////////////////////////////////////////////////////////////////////////////////
+// create function that only pulls the selected kejmin. // will also have to make a button to choose another kejmin / or just add a function that removes kejmin one after it dies// 
       $sql = "Select * from Kejmin where kejmin_id='$team1';";
       //send ts sql message
       $stmt = $conn->prepare($sql);
@@ -161,9 +162,7 @@ function move3 {
     </ul>
   </nav>
   <script src="attackbar.js"></script>
-  <script> 
 </body>
 </html>
 
 
-)

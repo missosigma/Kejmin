@@ -10,9 +10,7 @@ if(!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES"){
 }
 
 $team1 = intval($_SESSION["team1"] ?? 0);
-$team2 = intval($_SESSION["team2"] ?? 0);
-$team3 = intval($_SESSION["team3"] ?? 0);
-if ($team1 === 0 || $team2 === 0 || $team3 === 0) {
+if ($team1 === 0) {
     header("location:chooseyourkejmin.php");
     exit;
 }

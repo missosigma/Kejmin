@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Team</title>
+    <title>Your Kejmin</title>
     <link rel= "icon" type = "image/x-icon" href = "K_Images/KJMN.png">
 </head>
 
@@ -57,32 +57,32 @@
       $image1 = str_replace(' ', '', $cleanName) . '.png';
       
 
-      $sql = "Select * from Kejmin where kejmin_id='$team2';";
-      //send ts sql message
-      $stmt = $conn->prepare($sql);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      if($result->num_rows>0){
-      $row = $result->fetch_all(MYSQLI_ASSOC);}
-      // print_r($row);
-      $team2Name = $row[0]['kejmin_name'];
-      $cleanName = trim($team2Name);
-      $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
-      $image2 = str_replace(' ', '', $cleanName) . '.png';
+      // $sql = "Select * from Kejmin where kejmin_id='$team2';";
+      // //send ts sql message
+      // $stmt = $conn->prepare($sql);
+      // $stmt->execute();
+      // $result = $stmt->get_result();
+      // if($result->num_rows>0){
+      // $row = $result->fetch_all(MYSQLI_ASSOC);}
+      // // print_r($row);
+      // $team2Name = $row[0]['kejmin_name'];
+      // $cleanName = trim($team2Name);
+      // $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+      // $image2 = str_replace(' ', '', $cleanName) . '.png';
 
 
-      $sql = "Select * from Kejmin where kejmin_id='$team3';";
-      //send ts sql message
-      $stmt = $conn->prepare($sql);
-      $stmt->execute();
-      $result = $stmt->get_result();
-      if($result->num_rows>0){
-      $row = $result->fetch_all(MYSQLI_ASSOC);}
-      //print_r($row);
-      $team3Name = $row[0]['kejmin_name'];
-      $cleanName = trim($team3Name);
-      $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
-      $image3 = str_replace(' ', '', $cleanName) . '.png';
+      // $sql = "Select * from Kejmin where kejmin_id='$team3';";
+      // //send ts sql message
+      // $stmt = $conn->prepare($sql);
+      // $stmt->execute();
+      // $result = $stmt->get_result();
+      // if($result->num_rows>0){
+      // $row = $result->fetch_all(MYSQLI_ASSOC);}
+      // //print_r($row);
+      // $team3Name = $row[0]['kejmin_name'];
+      // $cleanName = trim($team3Name);
+      // $cleanName = preg_replace('/[^A-Za-z0-9 _-]/', '', $cleanName);
+      // $image3 = str_replace(' ', '', $cleanName) . '.png';
 
 
 
@@ -107,11 +107,11 @@
       </div>
     </div>
 
-    <h3><?php echo $team1Name; ?></h3>
-    <h4> Health: </h4>
+    <h3 class = "name"><?php echo $team1Name; ?></h3>
+    <h4 class = "health"> Health: </h4>
   </div>
 
-  <div class="card">
+  <!-- <div class="card">
     <div class="card-image-box">
       <img src="K_Images/Card_Bg.png" class="card-bg" alt="Background">
       <div class="kejmin-wrapper">
@@ -147,7 +147,7 @@
 
     <h3><?php echo $team3Name; ?></h3>
     <h4> Health: </h4>
-  </div>
+  </div> -->
 
 </div>
                                                   <style>
@@ -182,8 +182,8 @@
                                                           
                                                             .card {
                                                               position: relative;
-                                                              width: 300px;
-                                                              height: 500px;
+                                                              width: 400px;
+                                                              height: 600px;
                                                               background-color: white;
                                                               border: 2px solid black;
                                                               border-radius: 10px;
@@ -222,10 +222,10 @@
                                                           
                                                                   .kejmin-wrapper {
                                                                     position: absolute;
-                                                                    top: 0;
-                                                                    left: 0;
-                                                                    width: 100%;
-                                                                    height: 100%;
+                                                                    top: -130px;
+                                                                    left: -100px;
+                                                                    width: 150%;
+                                                                    height: 150%;
                                                                     z-index: 2; 
                                                                     display: flex;
                                                                     justify-content: center;
@@ -234,7 +234,7 @@
 
 
                                                                   .kejmin-img {
-                                                                    width: 80%;        
+                                                                    width: 100%;        
                                                                     max-height: 70%;     
                                                                     object-fit: contain;
                                                                     margin-bottom: 0px;  
@@ -252,6 +252,12 @@
                                                               font-family: monospace;
                                                               -webkit-text-stroke: 0.5px #B9A5E2;
                                                               font-size: 16px;
+                                                            }
+                                                            .name {
+                                                              font-size: 70px;
+                                                            }
+                                                            .health {
+                                                              font-size: 40px;
                                                             }
 
                                                       </style>

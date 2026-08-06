@@ -107,14 +107,14 @@ $conn->close();
     
     <div style="position: relative; width: 1200px; max-width: 100%; margin: 0 auto; padding: 40px 0;">
       <?php if ($team1Image): ?>
-      <img src="K_Images/<?php echo htmlspecialchars($team1Image); ?>" alt="<?php echo htmlspecialchars($kejmin1); ?>" style="position: absolute; left: 200px; top: 100px; width: 420px; height: auto; z-index: 1; transform: scaleX(-1);" />
+      <img src="K_Images/<?php echo htmlspecialchars($team1Image); ?>" alt="<?php echo htmlspecialchars($kejmin1); ?>" style="position: absolute; left: 150px; top: 120px; width: 420px; height: auto; z-index: 1; transform: scaleX(-1);" />
       <?php endif; ?>
       <?php if ($enemyImage): ?>
       <img src="K_Images/<?php echo htmlspecialchars($enemyImage); ?>" alt="Enemy" style="position: absolute; left: 900px; top: 50px; width: 180px; height: auto; z-index: 1;" />
       <?php elseif ($team2Image): ?>
-      <img src="K_Images/<?php echo htmlspecialchars($team2Image); ?>" alt="<?php echo htmlspecialchars($kejmin2); ?>" style="position: absolute; left: 900px; top: 30px; width: 180px; height: auto; z-index: 1;" />
+      <img src="K_Images/<?php echo htmlspecialchars($team2Image); ?>" alt="<?php echo htmlspecialchars($kejmin2); ?>" style="position: absolute; left: 1000px; top: 40px; width: 180px; height: auto; z-index: 1;" />
       <?php endif; ?>
-      <canvas width="800" height="600" style="background: transparent; display: block; margin: 0 auto; position: relative; z-index: 0;"></canvas>
+      <canvas width="800" height="620" style="background: transparent; display: block; margin: 0 auto; position: relative; z-index: 0;"></canvas>
     </div>
     <div id="team1" data-db="<?php echo htmlspecialchars($team1, ENT_QUOTES, 'UTF-8'); ?>"></div>
     <div id="team2" data-db="<?php echo htmlspecialchars($team2, ENT_QUOTES, 'UTF-8'); ?>"></div>

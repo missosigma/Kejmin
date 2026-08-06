@@ -9,8 +9,6 @@ if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES") {
 }
 
 $selected1 = $_SESSION["team1"] ?? '';
-$selected2 = $_SESSION["team2"] ?? '';
-$selected3 = $_SESSION["team3"] ?? '';
 
 $kejminList = [];
 try {
@@ -32,12 +30,12 @@ try {
 </head>
 <body>
     <div class="chooser">
-        <h1>Choose Your Three Kejmin</h1>
+        <h1>Choose Your Kejmin</h1>
         <form id="chooseForm" method="post" action="savekej.php">
             <div class="row">
 
                 <div class="field">
-                    <label for="firstTeam">First Kejmin</label>
+                    <label for="firstTeam"></label>
                     <select id="firstTeam" name="firstTeam">
                         <option value="">-- Select First Kejmin --</option>
                         <?php foreach ($kejminList as $kejmin): ?>
@@ -46,7 +44,7 @@ try {
                     </select>
                 </div>
 
-                <div class="field">
+                <!-- <div class="field">
                     <label for="secondTeam">Second Kejmin</label>
                     <select id="secondTeam" name="secondTeam">
                         <option value="">-- Select Second Kejmin --</option>
@@ -54,9 +52,9 @@ try {
                             <option value="<?php echo htmlspecialchars($kejmin['kejmin_id']); ?>" <?php echo ($selected2 == $kejmin['kejmin_id']) ? 'selected' : ''; ?>><?php echo htmlspecialchars($kejmin['kejmin_name']); ?></option>
                         <?php endforeach; ?>
                     </select>
-                </div>
+                </div> -->
 
-                <div class="field">
+                <!-- <div class="field">
                     <label for="thirdTeam">Third Kejmin</label>
                     <select id="thirdTeam" name="thirdTeam">
                         <option value="">-- Select Third Kejmin --</option>
@@ -64,7 +62,7 @@ try {
                             <option value="<?php echo htmlspecialchars($kejmin['kejmin_id']); ?>" <?php echo ($selected3 == $kejmin['kejmin_id']) ? 'selected' : ''; ?>><?php echo htmlspecialchars($kejmin['kejmin_name']); ?></option>
                         <?php endforeach; ?>
                     </select>
-                </div>
+                </div> -->
 
             </div>
 
@@ -85,15 +83,13 @@ try {
         async function checkTeamSave(event) {
             event.preventDefault();
 
-            const firstTeam = document.getElementById('firstTeam').value;
-            const secondTeam = document.getElementById('secondTeam').value;
-            const thirdTeam = document.getElementById('thirdTeam').value;
+            const firstTeamInput = document.getElementById('firstTeam');
+            const firstTeam = firstTeamInput ? firstTeamInput.value : '';
 
-            if (!firstTeam || !secondTeam || !thirdTeam) {
-                alert('Please choose three Kejmin.');
+            if (!firstTeam) {
+                alert('Please choose a Kejmin.');
                 return;
             }
-
 
             try {
                 const response = await fetch('savekej.php', {
@@ -102,7 +98,7 @@ try {
                         'Content-Type': 'application/json',
                         'X-Requested-With': 'XMLHttpRequest'
                     },
-                    body: JSON.stringify({ firstTeam, secondTeam, thirdTeam })
+                    body: JSON.stringify({ firstTeam })
                 });
 
                 if (!response.ok) {
@@ -113,15 +109,18 @@ try {
                 if (data.status === 'success') {
                     window.location.href = 'Home.php';
                 } else {
-                    alert(data.message || 'Unable to save your team.');
+                    alert(data.message || 'Unable to save your Kejmin.');
                 }
             } catch (error) {
                 console.error(error);
-                alert('Unable to save your team.');
+                alert('Unable to save your Kejmin.');
             }
         }
 
-        document.getElementById('chooseForm').addEventListener('submit', checkTeamSave);
+        const chooseForm = document.getElementById('chooseForm');
+        if (chooseForm) {
+            chooseForm.addEventListener('submit', checkTeamSave);
+        }
     </script>
 </body>
 </html>
