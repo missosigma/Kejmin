@@ -17,6 +17,7 @@ echo "<div class = 'w3-bar w3-white w3-padding w3-animate-opacity'>";
     $rows = $result->fetch_all(MYSQLI_ASSOC);
          for($i=0;$i<count($rows);$i++){
             $name = $rows[$i]["kejmin_name"];
+            $types = $rows[$i]["kejmin_types"];
             $id = $rows[$i]["kejmin_id"];
             $desc = $rows[$i]["kejdesc"];
             // sanitize and normalize image filename (remove special chars/spaces)
@@ -54,7 +55,7 @@ $conn->close();
 ?>
     </div>
 </div>
-<h3> <?php echo $name; ?> </h3>
+<h3> <?php echo $name, " (", $types, ")"; ?> </h3>
 <hr> 
 <h4> Description </h4> 
 <br> 
