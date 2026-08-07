@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(enemyHP > 0) {
                     moving = "enemy";
                     moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-                    if(playerHP <= 0) { gameOver(); }
+                    if(playerHP <= 0 || enemyHP <= 0) { gameOver(); }
                 } else { gameOver(); }
             } else {
                 moving = "enemy";
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(playerHP > 0) {
                     moving = "player";
                     moveCalc(moveId, playerKejId, enemyKejId);
-                    if(enemyHP <= 0) { gameOver(); }
+                    if(enemyHP <= 0 || playerHP <= 0) { gameOver(); }
                 } else { gameOver(); }
             }
         } else { gameOver(); }
@@ -57,7 +57,7 @@ let enemyHP = 100;
 let movePick;
 let moving;
 
-console.log("Your", kejmin_name[playerKejId], "is up against the opponent's", kejmin_name[enemyKejId] + "!");
+alert(`Your ${kejmin_name[playerKejId]} is up against the opponent's ${kejmin_name[enemyKejId]}!`);
 
 function moveCalc(movePicked, attackingId, defendingId) {
     effective = 1;
@@ -191,20 +191,29 @@ function moveCalc(movePicked, attackingId, defendingId) {
     }
 
     damage = Math.round(move_power[movePicked][attackingId] * effective);
-    console.log(kejmin_name[attackingId], "used", move_name[movePicked][attackingId], "on", kejmin_name[defendingId] + "!");
+    alert(`${kejmin_name[attackingId]} used ${move_name[movePicked][attackingId]} on ${kejmin_name[defendingId]}!`);
     if(moving == "player") {
-        playerHP -= damage;
-        console.log(kejmin_name[defendingId], "took", damage, "damage. It has", playerHP, "HP left.");
+        enemyHP -= damage;
+        if(enemyHP < 0) { enemyHP = 0;}
+        alert(`${kejmin_name[defendingId]} took ${damage} damage. It has ${enemyHP} HP left.`);
     }
     if(moving == "enemy") {
-        enemyHP -= damage;
-        console.log(kejmin_name[defendingId], "took", damage, "damage. It has", enemyHP, "HP left.");
+        playerHP -= damage;
+        if(playerHP < 0) { playerHP = 0;}
+        alert(`${kejmin_name[defendingId]} took ${damage} damage. It has ${playerHP} HP left.`);
     }
-    
 }
 
 
 
 function gameOver() {
+    if(playerHP == 0) {
+        alert(`The opposing ${kejmin_name[enemyKejId]} won! Your ${kejmin_name[playerKejId]} fainted! Better luck next time, trainer!`);
+    }
+    if(enemyHP == 0) {
+        alert(`Your ${kejmin_name[playerKejId]} won! The opposing ${kejmin_name[enemyKejId]} fainted! Well done, trainer!`);
+    }
+    playerHP = 100;
+    enemyHP = 100;
     window.history.back();
 }

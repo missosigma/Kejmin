@@ -1,5 +1,16 @@
 const canvas = document.querySelector('canvas');
+canvas.style.position = "absolute";
+canvas.style.bottom = "0";
+canvas.style.left = "50%";
+canvas.style.transform = "translate(-50%, 0)";
 const c = canvas.getContext('2d');
+
+window.addEventListener('pageshow', (event) => {
+  if (event.persisted) {
+    fighting = false;
+  }
+});
+
 
 canvas.width = 1024;
 canvas.height = 576;
@@ -29,7 +40,7 @@ collisionsMap.forEach((row, i) => {
     })
 })
 
-console.log(boundaries);
+// console.log(boundaries);
 
 const image = new Image();
 image.src = './K_Images/town.png';
@@ -49,11 +60,17 @@ playerLeftImage.src = './K_Images/sprites/testSpriteLeft.png';
 const playerRightImage = new Image();
 playerRightImage.src = './K_Images/sprites/testSpriteRight.png'; 
 
+const enemy1 = new Image(); 
+enemy1.src = 'K_Images/enemy1_left.png';
+
+const npc1 = new Image(); 
+npc1.src = 'K_Images/oldman.png';
+
 
 const player = new Sprite({
     position: {
-        x: canvas.width / 4 - 192 / 20 / 2, 
-        y: canvas.height / 2 - 68 / 2
+        x: canvas.width / 4 + 4, 
+        y: canvas.height / 2 - 164 / 2
     },
     image: playerDownImage,
     frames: {
@@ -68,8 +85,6 @@ const player = new Sprite({
         
     }
 })
-
-console.log('player')
 
 const background = new Sprite({ 
     position: {
@@ -87,6 +102,24 @@ const foreground = new Sprite({
     image: foregroundImage
 })
 
+const trainer1 = new Sprite({
+    position: {
+        x: offset.x + 1140,
+        y: offset.y + 966
+    },
+    image: enemy1,
+    scale: 15/11
+})
+
+const oldman = new Sprite({
+    position: {
+        x: offset.x + 796,
+        y: offset.y + 400
+    }, 
+    image: npc1,
+    scale: 15/10
+})
+
 const keys = {
     w: {
         pressed: false
@@ -102,7 +135,7 @@ const keys = {
     }
 }
 
-const movables = [background, ...boundaries, foreground];
+const movables = [background, ...boundaries, foreground, trainer1, oldman];
 
 function rectangularCollision({rectangle1, rectangle2}) {
     return (
@@ -117,6 +150,8 @@ function animate() {
     boundaries.forEach(boundary => {
         boundary.draw();
     })
+    oldman.draw();
+    trainer1.draw();
     player.draw();
     foreground.draw();
 
@@ -229,11 +264,12 @@ function animate() {
     }
 }
 
-animate();
 
 let lastKey = '';
+let fighting;
 
 window.addEventListener('keydown', (e) => {
+    if(fighting) { walking = false; return; }
     switch (e.key) {
         case 'w':
             keys.w.pressed = true;
@@ -250,6 +286,26 @@ window.addEventListener('keydown', (e) => {
         case 'd':
             keys.d.pressed = true;
             lastKey = 'd';
+            break;
+        case 'z':
+            if(!fighting &&
+            (lastKey === 'd' && trainer1.position.x == 300 && trainer1.position.y > 180 && trainer1.position.y < 225) ||
+            (lastKey === 'a' && trainer1.position.x == 195 && trainer1.position.y > 180 && trainer1.position.y < 225) ||
+            (lastKey === "w" && trainer1.position.y == 161 && trainer1.position.x > 240 && trainer1.position.x < 280) ||
+            (lastKey === "s" && trainer1.position.y == 281 && trainer1.position.x > 240 && trainer1.position.x < 280)
+            ) {
+                fighting = true;
+                keys.w.pressed = false;
+                keys.a.pressed = false;
+                keys.s.pressed = false;
+                keys.d.pressed = false;
+                alert("Let's fight!");
+                window.location = `encounter.php?enemyid=1`;
+            } else { fighting = false; }
+            if(lastKey === 'w' && oldman.position.y == 170 && oldman.position.x > 245 && oldman.position.x < 282) {
+                alert('The power of science is amazing!'); // this is a pokemon reference... 
+                keys.w.pressed = false;
+            }
             break;
     }
 })
@@ -300,7 +356,7 @@ document.addEventListener('visibilitychange', () => {
 playButton.onload = function() { c.drawImage(playButton, canvas.width/2-64,canvas.height/2-64, 128, 128); };
 window.addEventListener('click', (event) => {
     if(!gameStart) {
-    //   window.setInterval(gameCheck,1000/20);
+      animate();
       playTownMusic();
       gameStart = true;
     }

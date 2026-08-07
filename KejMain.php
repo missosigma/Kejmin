@@ -17,8 +17,15 @@ if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== "YES") {
 </head>
 
 <body>
+    <style>
+        body { background-color: black; }
+    </style>
 
-    <canvas width = 800px height = 600px style = "background: white"></canvas>
-    <script src="KejMain.js"></script>
+    <canvas width = 800px height = 600px style = "background: rgb(0, 0, 0)"></canvas>
+    <script src="data/collisions.js"></script>
+    <script src="data/battleZonesData.js"></script>
+    <script src="classes.js"></script>
+    <script src="index.js"></script>
+
 </body>
 </html>
