@@ -360,10 +360,10 @@ document.addEventListener('visibilitychange', () => {
 playButton.onload = function() { c.drawImage(playButton, canvas.width/2-64,canvas.height/2-64, 128, 128); };
 window.addEventListener('click', (event) => {
     if(!gameStart) {
-<<<<<<< HEAD
+// <<<<<<< HEAD
       animate();
-=======
->>>>>>> b5b561a (Fixed image)
+// =======
+// >>>>>>> b5b561a (Fixed image)
       playTownMusic();
       gameStart = true;
     }
