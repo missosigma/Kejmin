@@ -12,9 +12,13 @@ include "../back_button.php";
 <h1> Element Chart:</h1>
 </div>
 <body>
+    <div class="button-holder">
+     <a class="button" href="moves.php">Moves</a>
+</div>
   <div class="image-container">
     <img src="../K_Images/ElementChart.png" alt="Centered Image">
   </div>  
+
 </body>
 <style>
  .heading-container {
@@ -59,5 +63,16 @@ img{
     body{
         background-color:#B9A5E2;
     }
+    .button{
+    padding: 10px 20px;
+    font-size: 16px;
+    color: black;
+    border-radius: 15px;
+    font-weight: bold;
+    font-family:Impact;
+    background-color: #B9A5E2;
+    border: 2px solid black;
+    margin: 10px;
+}
 </style>
 </html>
