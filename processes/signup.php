@@ -9,8 +9,8 @@ if($conn->connect_error){
   die("Connection Failed: " . $conn->connect_error);
 }
 //Prepare sql message 
-$sql = "INSERT INTO users(username,bestpassword,age,approved,createdOn) 
-VALUES ('{$user}',SHA2(CONCAT('flower','{$pass}','pepper'),0),{$age},1,NOW());";
+$sql = "INSERT INTO users(username,bestpassword,approved,createdOn) 
+VALUES ('{$user}',SHA2(CONCAT('flower','{$pass}','pepper'),0),1,NOW());";
 
 //send ts sql message
 $stmt = $conn->prepare($sql);
