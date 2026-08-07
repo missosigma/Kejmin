@@ -108,7 +108,7 @@
     </div>
 
     <h3 class = "name"><?php echo $team1Name; ?></h3>
-    <h4 class = "health"> Health: </h4>
+    <!-- <h4 class = "health"> Health: </h4> -->
   </div>
 
   <!-- <div class="card">
@@ -183,7 +183,7 @@
                                                             .card {
                                                               position: relative;
                                                               width: 400px;
-                                                              height: 600px;
+                                                              height: 400px;
                                                               background-color: white;
                                                               border: 2px solid black;
                                                               border-radius: 10px;

@@ -88,10 +88,10 @@ li a{
         <ul> 
             <li><a href ="#">Hello, <?php echo $_SESSION["userName"];?>!</a></li>
             <li><a href = "Home.php"> Home </a></li>
-            <li><a href = "kejmain.php"> Resume </a></li>
+            <li><a href = "KejMain.php"> Resume </a></li>
             <li><a href = "yourteam.php">Your Kejmin </a></li>
             <li><a href = "chooseyourkejmin.php"> Change Your Kejmin </a></li>
-            <li><a href = "kejmindex.php">Kejmin Dex</a></li>
+            <li><a href = "Kejmindex.php">Kejmin Dex</a></li>
             <li><a href = "map.php"> Map </a></li>
             <li><a href = "tutorial.php"> Tutorial </a></li>
             <li><a href = "about.php"> About </a></li>

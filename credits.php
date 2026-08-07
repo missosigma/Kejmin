@@ -37,7 +37,7 @@ p{
     font-weight:bold;
     margin: 1px 1px 1px 1px;
 }
-  .button{
+  button{
     padding: 10px 20px;
     font-size: 16px;
     color: rgb(200, 251, 255);
@@ -46,26 +46,8 @@ p{
     font-style: italic;
     background-color: rgb(235, 59, 212);
     border: 2px solid rgb(123, 12, 148);
-    margin: 10px 10px 10px 10px;
+    margin: 10px;
   }
 
     </style>
 
-<?php
-  include "back_button.php";
-?>
-
-<body>
-  <h1>Welcome to Kejmin!</h1>
-  <p>Kejmin is a rpg where you, the player, battles foes with your personal selected Kejmin! <br>
-  The game was made in less than one week by four highschool students! <br>
-  They were able to create a functioning battle system, and multiple 'kejmin' for both the user and enemies! <br>
-  Experience a quaint village where you can Kejmin battle an enemy trainer! <br>
-  Remember to have fun exploring the webpage!</p>
-  
-</body>
-<a class = "button" href = "credits.php">Credits</a>
-
-<footer>
-  <h3>Kejmin was developed by students from Momentum Coding Academy.<h3>
-</footer>
