@@ -60,5 +60,5 @@ p{
     <h2>> Chris Courses, for a simple overworld design guide</h2>
     <h2>> Itch.io user ZedPx1, for tileset assets</h2>
     <h2>> Image assets for player, NPC, enemy, and battle background from online public resources</h2>
-    <br><h1>All Kejmin sprites created by Team KJMN!</h1>
+    <br><h1>All Kejmin sprites and music created by Team KJMN!</h1>
 </body>
