@@ -1,3 +1,6 @@
+<?php
+include "../back_button.php";
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
