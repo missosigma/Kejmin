@@ -53,18 +53,22 @@ button, .button-class, a {
   }
 
     </style>
-
+<?php
+  include "navbar.php";
+?>
+<br>
 <?php
   include "back_button.php";
 ?>
 <a class = "button" href = "credits.php">Credits</a>
 
+
 <body>
   <h1>Welcome to Kejmin!</h1>
-  <p>Kejmin is a rpg where you, the player, battles foes with your personal selected Kejmin! <br>
-  The game was made in less than one week by four highschool students! <br>
-  They were able to create a functioning battle system, and multiple 'kejmin' for both the user and enemies! <br>
-  Experience a quaint village where you can Kejmin battle an enemy trainer! <br>
+  <p>Kejmin is an RPG where you, the player, battle <br>foes with your personal selected Kejmin! <br><br>
+  The game was made in less than one <br>week by four highschool students! <br><br>
+  They were able to create a functioning battle system, and multiple 'Kejmin' for both the user and enemies! <br><br>
+  Experience a quaint village where you can battle <br>an enemy trainer's Kejmin with your own! <br><br>
   Remember to have fun exploring the webpage!</p>
   
 </body>

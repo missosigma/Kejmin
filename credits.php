@@ -1,4 +1,4 @@
-
+<?php include "navbar.php"; ?>
 <style>
 body{
     Font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -55,6 +55,7 @@ p{
 ?>
 
 <body>
+<<<<<<< HEAD
   <h1>Credits</h1>
   <p></p>
   <h3><a href = "https://www.youtube.com/watch?v=yP5DKzriqXA">Youtube Tutorial</a></h3>
@@ -66,3 +67,11 @@ p{
 <footer>
   <h3>Kejmin was developed by students from Momentum Coding Academy.<h3>
 </footer>
+=======
+    <h1>Credits</h1><br>
+    <h2>> Chris Courses, for a simple overworld design guide</h2>
+    <h2>> Itch.io user ZedPx1, for tileset assets</h2>
+    <h2>> Image assets for player, NPC, enemy, and battle background from online public resources</h2>
+    <br><h1>All Kejmin sprites created by Team KJMN!</h1>
+</body>
+>>>>>>> ea356b5 (About and credits updated)
