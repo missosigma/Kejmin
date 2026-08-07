@@ -50,4 +50,19 @@ p{
   }
 
     </style>
+<?php
+  include "back_button.php"
+?>
 
+<body>
+  <h1>Credits</h1>
+  <p></p>
+  <h3><a href = "https://www.youtube.com/watch?v=yP5DKzriqXA">Youtube Tutorial</a></h3>
+  <h3><a href = "https://zedpxl.itch.io/pixelart-forest-asset-pack">Assets</a></h3>
+  
+</body>
+
+
+<footer>
+  <h3>Kejmin was developed by students from Momentum Coding Academy.<h3>
+</footer>

@@ -2,7 +2,6 @@
 require_once("../dbconfig.php");
 $user = $_POST["username"];
 $pass = $_POST["password"];
-$age = $_POST["age"];
 $cpass = $_POST["cpassword"];
 //connect to database
 $conn = new mysqli($servername, $username, $password, $database);

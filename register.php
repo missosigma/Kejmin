@@ -24,9 +24,6 @@
         <label for = "cpassword">Confirm Password</label>
         <input type = "password" name = "cpassword" id = "cpassword">
         <br>
-        <label for = "age">Age</label>
-        <input type = "text" name = "age" id = "age">
-        <br>
         <!-- <input type="submit" value = "Register"> -->
          <button onclick="registerUser(event)">Register</button>
     </form>
