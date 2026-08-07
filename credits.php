@@ -50,6 +50,7 @@ p{
   }
 
     </style>
+    <br>
 <?php
   include "back_button.php"
 ?>
