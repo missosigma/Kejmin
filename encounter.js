@@ -45,7 +45,7 @@ let kejmin_name = [, , , , , , "Aerk", "Sleef", "Sweeterie", "Fanzo", "Getzy"];
 let move_name = [
             [, , , , , , "Bubble Pop", "Water Blast", "Sugar Rush", "Blunt Force Trauma", "Sugar Crash"],
             [, , , , , , "Brute Force", "Quick Strike", "Quick Strike", "Rusty Swipe", "Cotton Squeeze"],
-            [, , , , , , "Water Blast", "Drown", "Sugar Punch", "Brute Force", "Quick Strike"]
+            [, , , , , , "Water Blast", "Water Blast", "Sugar Punch", "Brute Force", "Quick Strike"]
                 ];
 let kejmin_type1 = [, , , , , , types[1], types[2], types[3], types[5], types[4]];
 let kejmin_type2 = [, , , , , , types[1], types[0], types[0], types[0], types[3]];
@@ -57,7 +57,7 @@ let move_type = [
 let move_power = [
             [, , , , , , 30, 20, 30, 30, 10],
             [, , , , , , 30, 20, 20, 20, 10],
-            [, , , , , , 20, 10, 20, 30, 20]
+            [, , , , , , 20, 20, 20, 30, 20]
             ]
 let damage;
 let playerHP = 100;
