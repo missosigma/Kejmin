@@ -272,23 +272,23 @@ let fighting;
 window.addEventListener('keydown', (e) => {
     if(fighting) { walking = false; return; }
     switch (e.key) {
-        case 'w':
+        case 'w': case 'ArrowUp':
             keys.w.pressed = true;
             lastKey = 'w';
             break;
-        case 'a':
+        case 'a': case 'ArrowLeft':
             keys.a.pressed = true;
             lastKey = 'a';
             break;
-        case 's':
+        case 's': case 'ArrowDown':
             keys.s.pressed = true;
             lastKey = 's';
             break;
-        case 'd':
+        case 'd': case 'ArrowRight':
             keys.d.pressed = true;
             lastKey = 'd';
             break;
-        case 'z':
+        case 'z': case 'Enter':
             if(!fighting &&
             (lastKey === 'd' && trainer1.position.x == 300 && trainer1.position.y > 180 && trainer1.position.y < 225) ||
             (lastKey === 'a' && trainer1.position.x == 195 && trainer1.position.y > 180 && trainer1.position.y < 225) ||
@@ -313,16 +313,16 @@ window.addEventListener('keydown', (e) => {
 
 window.addEventListener('keyup', (e) => {
     switch (e.key) {
-        case 'w':
+        case 'w': case 'ArrowUp':
             keys.w.pressed = false;
             break;
-        case 'a':
+        case 'a': case 'ArrowLeft':
             keys.a.pressed = false;
             break;
-        case 's':
+        case 's': case 'ArrowDown':
             keys.s.pressed = false;
             break;
-        case 'd':
+        case 'd': case 'ArrowRight':
             keys.d.pressed = false;
             break;
     }
