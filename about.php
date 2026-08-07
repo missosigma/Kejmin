@@ -68,7 +68,8 @@ button, .button-class, a {
   <p>Kejmin is an RPG where you, the player, battle <br>foes with your personal selected Kejmin! <br><br>
   The game was made in less than one <br>week by four highschool students! <br><br>
   They were able to create a functioning battle system, and multiple 'Kejmin' for both the user and enemies! <br><br>
-  Experience a quaint village where you can battle <br>an enemy trainer's Kejmin with your own! <br><br>
+  Experience a quaint village where you can battle <br>an enemy trainer's Kejmin with your own! <br><br><br>
+  This is a <u>proof-of-concept</u> game. There are basic functions that can be elaborated on and turned into a full game.
   Remember to have fun exploring the webpage!</p>
   
 </body>
