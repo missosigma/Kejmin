@@ -54,6 +54,7 @@ p{
 <?php
   include "back_button.php";
 ?>
+<a class = "button" href = "credits.php">Credits</a>
 
 <body>
   <h1>Welcome to Kejmin!</h1>
@@ -64,7 +65,7 @@ p{
   Remember to have fun exploring the webpage!</p>
   
 </body>
-<a class = "button" href = "credits.php">Credits</a>
+
 
 <footer>
   <h3>Kejmin was developed by students from Momentum Coding Academy.<h3>
