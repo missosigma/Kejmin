@@ -84,24 +84,24 @@
   <text> <div class ="bigger_text">Welcome to Kejmin!</div><br>
    <div class="controlswrapper">
   <div class ="upcontainer">
-          W = Up
+          W / Up Arrow Key = Up
     <img src="K_Images/Uparrow.png" class ="uparrow">
 </div><br>
 <div class ="leftcontainer">
-    A = Left 
+    A / Left Arrow Key = Left 
     <img src="K_Images/Leftarrow.png" class = "leftarrow">
 </div><br>
 <div class = "downcontainer">
-    S = Down 
+    S / Down Arrow Key = Down 
     <img src="K_Images/Downarrow.png" class = "downarrow">
 </div><br>
 <div class = "rightcontainer">
-    D = Right 
+    D / Right Arrow Key = Right 
     <img src ="K_Images/Rightarrow.png" class = "rightarrow">
 </div>
 </div>
 <br><br>
-      Press Z to interact with mobs.<br><br>
+      Press Z or Enter to interact with others.<br><br>
     Click the buttons on your screen to access different menus. <br> <br>
 
     A chart of the different Types and their effectiveness! <Br> <br>
