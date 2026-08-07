@@ -47,8 +47,8 @@ if ($team1 === 0) {
   <!-- <a class="button" href="navbar.php"></a>
   <a class="button" href="KejMain.php"></a> -->
    <a class="button" href="chooseyourkejmin.php">Change Your Kejmin</a>
-  <a class = "button" href = "KejMain.php">Start</a>
-  
+  <a class = "button" href = "KejMain.php">Play Kejmins!</a>
+  <a class = "button" href = "about.php">About Kejmin</a>
   
 </div>
     
