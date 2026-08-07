@@ -13,19 +13,29 @@ h1{
     color:black;
     -webkit-text-stroke:0.5px white;
     font-family:Impact;
+    font-size:50px;
 }
 h2{
     text-align:center;
     -webkit-text-stroke:0.5px white;
     font-family:Comic Sans MS;
 }
+h3{
+    text-align:center;
+    color:black;
+    -webkit-text-stroke:0.5px white;
+    font-family:Impact;
+}
 p{
         text-align:center;
     -webkit-text-stroke:0.2px white;
+    background-color: rgb(255, 146, 255);
+    border-radius: 10px;
+    border: solid 5px rgb(109, 32, 142);
     font-family:monospace;
-    font-size:20px;
+    font-size:37px;
     font-weight:bold;
-    margin: 0;
+    margin: 1px 1px 1px 1px;
 }
 
 
@@ -37,12 +47,14 @@ p{
 
 <body>
   <h1>Welcome to Kejmin!</h1>
-  <p>Kejmin is a rpg where you, the player, battles foes with your selected Kejmin!</p>
-  <p>The game was made in less than one week by four highschool students!</p>
-  <p>They were able to create a functioning battle system, and multiple 'kejmin' for both the user and enemies!</p>
+  <p>Kejmin is a rpg where you, the player, battles foes with your personal selected Kejmin! <br>
+  The game was made in less than one week by four highschool students! <br>
+  They were able to create a functioning battle system, and multiple 'kejmin' for both the user and enemies! <br>
+  Experience a quaint village where you can Kejmin battle an enemy trainer! <br>
+  Remember to have fun exploring the webpage!</p>
   
 </body>
 
 <footer>
-  <p>Kejmin was developed by highschool students from Momentum Coding Academy.</p>
+  <h3>Kejmin was developed by students from Momentum Coding Academy.<h3>
 </footer>

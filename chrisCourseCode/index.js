@@ -63,6 +63,9 @@ villagerImg.src = './img/villager/Idle.png'
 const oldManImg = new Image()
 oldManImg.src = './img/oldMan/Idle.png'
 
+const kareyImg = new Image()
+kareyImg.src = './img/Karey.png'
+
 charactersMap.forEach((row, i) => {
   row.forEach((symbol, j) => {
     // 1026 === villager
@@ -115,6 +118,22 @@ charactersMap.forEach((row, i) => {
     }
   })
 })
+
+characters.push(
+  new Character({
+    position: {
+      x: offset.x + 1000,
+      y: offset.y + 800
+    },
+    image: kareyImg,
+    frames: {
+      max: 1,
+      hold: 60
+    },
+    scale: 2,
+    dialogue: ['Hi there!']
+  })
+)
 
 const image = new Image()
 image.src = './img/Pellet Town.png'

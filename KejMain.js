@@ -12,6 +12,7 @@ const town = new Image(); town.src = 'K_Images/town.png';
 const tree = new Image(); tree.src = 'K_Images/tree.png';
 const enemy1 = new Image(); enemy1.src = 'K_Images/enemy1_left.png';
 const npc1 = new Image(); npc1.src = 'K_Images/oldman.png';
+const npc2 = new Image(); npc2.src = 'K_Images/Karey.png';
 const townmusic = new Audio('K_Audio/town4.mp3'); townmusic.loop = true;
 let townMusicStarted = false;
 
@@ -40,6 +41,7 @@ let i = 0;
 let j = 0;
 let walking = false;
 let npc1Interactable = false;
+let npc2Interactable = false;
 let townx = 0;
 let towny = -200;
 let treex = 252;
@@ -48,6 +50,8 @@ let enemy1x = 767;
 let enemy1y = 444;
 let npc1x = 528;
 let npc1y = 50;
+let npc2x = 0;
+let npc2y = 0;
 let spriteSize = 32;
 let spritex = 176;
 let spritey = 100;
@@ -205,6 +209,9 @@ document.addEventListener('keydown', (event) => {
       alert("Let's fight!");
       encountered++;
       window.location = `encounter.php?enemyid=1`;
+    }
+    if(npc2Interactable){
+      alert('Check out my Getzy!');
     }
   }
   if (event.key === 's' || event.key === 'ArrowDown') {

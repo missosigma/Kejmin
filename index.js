@@ -66,7 +66,6 @@ enemy1.src = 'K_Images/enemy1_left.png';
 const npc1 = new Image(); 
 npc1.src = 'K_Images/oldman.png';
 
-
 const player = new Sprite({
     position: {
         x: canvas.width / 4 + 4, 
@@ -136,6 +135,7 @@ const keys = {
 }
 
 const movables = [background, ...boundaries, foreground, trainer1, oldman];
+const fixedWorldSprites = [];
 
 function rectangularCollision({rectangle1, rectangle2}) {
     return (
@@ -152,6 +152,7 @@ function animate() {
     })
     oldman.draw();
     trainer1.draw();
+    fixedWorldSprites.forEach((sprite) => sprite.draw());
     player.draw();
     foreground.draw();
 
