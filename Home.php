@@ -46,9 +46,9 @@ if ($team1 === 0) {
 <div class="button-group">
   <!-- <a class="button" href="navbar.php"></a>
   <a class="button" href="KejMain.php"></a> -->
+   <a class="button" href="chooseyourkejmin.php">Change Your Kejmin</a>
   <a class = "button" href = "KejMain.php">Start</a>
-  <a class="button" href="chooseyourkejmin.php">Change Your Kejmin</a>
-  <a class = "button" href = "encounter.php">Fight!</a>
+  
   
 </div>
     
