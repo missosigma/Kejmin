@@ -41,7 +41,7 @@ function getHealthEnemy(){
 
 let effective = 1;
 let types = ["Neutral", "Water", "Soap", "Sugar", "Cotton", "Metal", "Paper", "Bamboo"]
-let kejmin_name = [, , , , , , "Aerk", "Sleef", "Sweeterie", "Fanzo", "Getzy"];
+let kejmin_name = [, , , , , , "Aerk", "Sleaf", "Sweeterie", "Fanzo", "Getzy"];
 let move_name = [
             [, , , , , , "Water Blast", "Bubble Pop", "Sugar Rush", "Blunt Force Trauma", "Sugar Crash"],
             [, , , , , , "Quick Strike", "Brute Force", "Quick Strike", "Rusty Swipe", "Cotton Squeeze"],
