@@ -195,5 +195,3 @@ $conn->close();
 }
 
     </style>
-
-    

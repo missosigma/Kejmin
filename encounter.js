@@ -10,25 +10,33 @@ document.addEventListener('DOMContentLoaded', () => {
         const moveId = +button.dataset.id - 1;
         if(playerHP > 0 && enemyHP > 0) {
             if(Math.random() * 2 > 1) {
-                moving = "player";
-                moveCalc(moveId, playerKejId, enemyKejId);
-                if(enemyHP > 0) {
-                    moving = "enemy";
-                    moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-                    if(playerHP <= 0 || enemyHP <= 0) { gameOver(); }
-                } else { gameOver(); }
-            } else {
-                moving = "enemy";
-                moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
-                if(playerHP > 0) {
                     moving = "player";
                     moveCalc(moveId, playerKejId, enemyKejId);
-                    if(enemyHP <= 0 || playerHP <= 0) { gameOver(); }
-                } else { gameOver(); }
+                    if(enemyHP > 0) {
+                        moving = "enemy";
+                        moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                        if(playerHP <= 0 || enemyHP <= 0) { gameOver(); }
+                    } else { gameOver(); }
+            } else {
+                    moving = "enemy";
+                    moveCalc(Math.floor(Math.random()*3), enemyKejId, playerKejId);
+                    if(playerHP > 0) {
+                        moving = "player";
+                        moveCalc(moveId, playerKejId, enemyKejId);
+                        if(enemyHP <= 0 || playerHP <= 0) { gameOver(); }
+                    } else { gameOver(); }
             }
         } else { gameOver(); }
+        syncBattleBars();
     });
 });
+
+function getHealthUser(){
+
+}
+function getHealthEnemy(){
+
+}
 
 
 let effective = 1;
@@ -206,6 +214,14 @@ function moveCalc(movePicked, attackingId, defendingId) {
 
 
 
+function syncBattleBars() {
+    if (typeof window.updateHealthBarsFromCombat === 'function') {
+        window.updateHealthBarsFromCombat(playerHP, enemyHP);
+    } else if (typeof updateHealthBarsFromCombat === 'function') {
+        updateHealthBarsFromCombat(playerHP, enemyHP);
+    }
+}
+
 function gameOver() {
     if(playerHP == 0) {
         alert(`The opposing ${kejmin_name[enemyKejId]} won! Your ${kejmin_name[playerKejId]} fainted! Better luck next time, trainer!`);
@@ -217,3 +233,5 @@ function gameOver() {
     enemyHP = 100;
     window.history.back();
 }
+
+syncBattleBars();

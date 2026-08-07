@@ -157,6 +157,7 @@ button:hover {
   </nav>
   </body>
   </html>
+  <script src="healthtoencounter.js" defer></script>
   <script src="encounter.js" defer></script>
 
 

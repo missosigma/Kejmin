@@ -4,21 +4,35 @@ let enemycurrenthp = 100;
 let yourmaxhp = 100;
 let yourcurrenthp = 100;
 
-const enemybar = document.getElementById('enemy-bar');
-const playerbar = document.getElementById('player-bar');
+function getHealthBars() {
+    return {
+        enemybar: document.getElementById('enemy-bar'),
+        playerbar: document.getElementById('player-bar')
+    };
+}
 
-function updatebars(){
-    let enemypercent = (enemycurrenthp/enemymaxhp) * 100;
-    let yourpercent = (yourcurrenthp/yourmaxhp) * 100;
+function updatebars() {
+    const { enemybar, playerbar } = getHealthBars();
+    let enemypercent = (enemycurrenthp / enemymaxhp) * 100;
+    let yourpercent = (yourcurrenthp / yourmaxhp) * 100;
 
-    if(enemypercent < 0){
+    if (enemypercent < 0) {
         enemypercent = 0;
     }
-    
-    if(yourpercent < 0){
+
+    if (yourpercent < 0) {
         yourpercent = 0;
     }
 
-    enemybar.style.width = enemypercent + "%";
-    playerbar.style.width = playerpercent + "%";
+    if (enemybar) {
+        enemybar.style.width = enemypercent + "%";
+    }
+
+    if (playerbar) {
+        playerbar.style.width = yourpercent + "%";
+    }
 }
+
+document.addEventListener('DOMContentLoaded', updatebars);
+
+window.updatebars = updatebars;

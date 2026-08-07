@@ -94,6 +94,7 @@ li a{
             <li><a href = "kejmindex.php">Kejmin Dex</a></li>
             <li><a href = "map.php"> Map </a></li>
             <li><a href = "tutorial.php"> Tutorial </a></li>
+            <li><a href = "about.php"> About </a></li>
             <li><a href = "processes/logout.php"> Logout </a></li>
         </ul>
     </nav> 
