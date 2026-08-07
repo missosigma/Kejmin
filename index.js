@@ -329,6 +329,9 @@ window.addEventListener('keyup', (e) => {
 })
 
 
+
+// AUDIO
+
 const townmusic = new Audio('K_Audio/town4.mp3'); townmusic.loop = true;
 let townMusicStarted = false;
 let gameStart = false;
@@ -357,7 +360,10 @@ document.addEventListener('visibilitychange', () => {
 playButton.onload = function() { c.drawImage(playButton, canvas.width/2-64,canvas.height/2-64, 128, 128); };
 window.addEventListener('click', (event) => {
     if(!gameStart) {
+<<<<<<< HEAD
       animate();
+=======
+>>>>>>> b5b561a (Fixed image)
       playTownMusic();
       gameStart = true;
     }
@@ -365,3 +371,7 @@ window.addEventListener('click', (event) => {
       playTownMusic();
     }
 });
+
+if (player.y >= 953){
+    !background.draw();
+}
