@@ -16,6 +16,7 @@ if ($team1 === 0) {
 }
 
 ?>
+<br>
 
 
 <!DOCTYPE html>
